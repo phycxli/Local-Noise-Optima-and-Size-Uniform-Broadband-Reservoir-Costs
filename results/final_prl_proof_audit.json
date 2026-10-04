@@ -1,0 +1,257 @@
+{
+  "source_sha256": "e8b96585fe20ede337fc8d0a9b913aef25989f24e612a22d7151e94530f67836",
+  "independent_exact_checks": [
+    {
+      "model": "uniform",
+      "halfwidth": "1/20",
+      "N": 9,
+      "prefix": 4,
+      "range": 1,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "uniform",
+      "halfwidth": "1/20",
+      "N": 9,
+      "prefix": 4,
+      "range": 2,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "uniform",
+      "halfwidth": "7/100",
+      "N": 9,
+      "prefix": 4,
+      "range": 1,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "uniform",
+      "halfwidth": "7/100",
+      "N": 9,
+      "prefix": 4,
+      "range": 2,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "dimerized",
+      "halfwidth": "1/20",
+      "N": 9,
+      "prefix": 4,
+      "range": 1,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "dimerized",
+      "halfwidth": "1/20",
+      "N": 9,
+      "prefix": 4,
+      "range": 2,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "dimerized",
+      "halfwidth": "7/100",
+      "N": 9,
+      "prefix": 4,
+      "range": 1,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    },
+    {
+      "model": "dimerized",
+      "halfwidth": "7/100",
+      "N": 9,
+      "prefix": 4,
+      "range": 2,
+      "exact_monomial_gram_agreement": true,
+      "exact_dual_identity": true,
+      "crossing_bound_passed": true
+    }
+  ],
+  "proposition_S5_complex_kernel_checks": [
+    {
+      "cell_modes": 1,
+      "cells": 4,
+      "sign": 1,
+      "kernel_residual": 3.554447978966673e-16,
+      "transverse_kernel_minimum": 0.5812227336609386,
+      "finite_alpha": 15.090146210966735,
+      "minimum_gram_eigenvalue": 1.7623513454713938e-15,
+      "drift_residual": 1.0861770482889987e-15,
+      "pointwise_floor_residual": 7.105427357601002e-15,
+      "adjacent_factorization_residual": 5.786175639927874e-15,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    },
+    {
+      "cell_modes": 1,
+      "cells": 4,
+      "sign": -1,
+      "kernel_residual": 3.554447978966673e-16,
+      "transverse_kernel_minimum": 0.5812227336609386,
+      "finite_alpha": 16.122452700805468,
+      "minimum_gram_eigenvalue": -1.3099419118422006e-15,
+      "drift_residual": 2.3241852907718646e-15,
+      "pointwise_floor_residual": 5.329423326623466e-15,
+      "adjacent_factorization_residual": 7.529500995167891e-15,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    },
+    {
+      "cell_modes": 2,
+      "cells": 4,
+      "sign": 1,
+      "kernel_residual": 1.1500366259642884e-15,
+      "transverse_kernel_minimum": 0.3909151032665816,
+      "finite_alpha": 56.4427429054378,
+      "minimum_gram_eigenvalue": -2.288282376898061e-15,
+      "drift_residual": 4.272117367976279e-15,
+      "pointwise_floor_residual": 1.5276668818842154e-13,
+      "adjacent_factorization_residual": 1.3212270099447723e-13,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    },
+    {
+      "cell_modes": 2,
+      "cells": 4,
+      "sign": -1,
+      "kernel_residual": 1.1500366259642884e-15,
+      "transverse_kernel_minimum": 0.3909151032665816,
+      "finite_alpha": 57.97760301952975,
+      "minimum_gram_eigenvalue": -3.2626339264202724e-14,
+      "drift_residual": 8.917113970857084e-15,
+      "pointwise_floor_residual": 2.6396241712262943e-13,
+      "adjacent_factorization_residual": 9.703788042699515e-14,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    },
+    {
+      "cell_modes": 3,
+      "cells": 4,
+      "sign": 1,
+      "kernel_residual": 2.1613946200053814e-15,
+      "transverse_kernel_minimum": 0.4883484783920092,
+      "finite_alpha": 88.9334802396867,
+      "minimum_gram_eigenvalue": 4.321821428556921e-14,
+      "drift_residual": 1.1578690951848499e-14,
+      "pointwise_floor_residual": 7.993605777301127e-14,
+      "adjacent_factorization_residual": 3.218010104789921e-13,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    },
+    {
+      "cell_modes": 3,
+      "cells": 4,
+      "sign": -1,
+      "kernel_residual": 2.1613946200053814e-15,
+      "transverse_kernel_minimum": 0.4883484783920092,
+      "finite_alpha": 87.7048494021837,
+      "minimum_gram_eigenvalue": -3.1690479994303065e-14,
+      "drift_residual": 1.6907092104065105e-14,
+      "pointwise_floor_residual": 1.7403010141530734e-13,
+      "adjacent_factorization_residual": 2.0163826391786016e-13,
+      "scope": "complex finite matrix construction; not a shared-band or all-length proof"
+    }
+  ],
+  "proposition_S17_exact_extension_checks": [
+    {
+      "model": "uniform",
+      "prefix": 4,
+      "N": 4,
+      "bridge_rate": "5/4",
+      "reserved_prefix_cap": "27/4",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "uniform",
+      "prefix": 4,
+      "N": 5,
+      "bridge_rate": "5/4",
+      "reserved_prefix_cap": "27/4",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "uniform",
+      "prefix": 4,
+      "N": 9,
+      "bridge_rate": "5/4",
+      "reserved_prefix_cap": "27/4",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "uniform",
+      "prefix": 4,
+      "N": 12,
+      "bridge_rate": "5/4",
+      "reserved_prefix_cap": "27/4",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "dimerized",
+      "prefix": 4,
+      "N": 4,
+      "bridge_rate": "6/5",
+      "reserved_prefix_cap": "34/5",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "dimerized",
+      "prefix": 4,
+      "N": 5,
+      "bridge_rate": "6/5",
+      "reserved_prefix_cap": "34/5",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "dimerized",
+      "prefix": 4,
+      "N": 9,
+      "bridge_rate": "6/5",
+      "reserved_prefix_cap": "34/5",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    },
+    {
+      "model": "dimerized",
+      "prefix": 4,
+      "N": 12,
+      "bridge_rate": "6/5",
+      "reserved_prefix_cap": "34/5",
+      "exact_drift_and_cap_checks": true,
+      "scope": "rational feasible prefix; optimized saved prefixes use the resource checker"
+    }
+  ],
+  "fock_operator_checks": {
+    "complex_jump_first_moment_residual": 4.47545209131181e-16,
+    "complex_covariance_residual": 2.6367796834847468e-15,
+    "cutoff": 5,
+    "low_sector_dimensions": 9,
+    "scope": "operator identities in the exact low occupation sector, not all-length dynamics"
+  },
+  "quadrature_check": {
+    "output_photon_noise": 0.19834710743801648,
+    "vacuum_normalized_quadrature_noise": 1.3966942148760328,
+    "commutator_residual": 2.220446049250313e-16,
+    "correct_relation": "S_quad=1+2*S_photon at a symmetric spectrum",
+    "legacy_half_factor_error": 0.19834710743801648
+  },
+  "all_checks_passed": true,
+  "reviewer": "Automated independent algebra and numerical checks",
+  "is_human_author_verification": false,
+  "scope": "S5 complex kernels; S16 exact Gram/dual/lifting identities; S17 exact extensions; full results use saved rational certificates"
+}

@@ -1,0 +1,86 @@
+{
+  "frequency_grid_points": 1201,
+  "pointwise_floor_mean": 0.9962251775937664,
+  "shared_spectra": [
+    {
+      "radius": "all",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_rall.npz",
+      "matrix_sha256": "4ce36d088c0d8467c51670edf73c0b6320e3dbf4e725831f2472e1caa4ea1701",
+      "spectral_mean": 2.3740138970533344,
+      "certified_interval": [
+        2.3740127648775498,
+        2.3740138987789567
+      ],
+      "sample_frequencies": [
+        -0.05,
+        -0.024999999999999998,
+        6.938893903907228e-18,
+        0.02500000000000001,
+        0.05
+      ],
+      "sample_noise": [
+        3.7879660978517213,
+        2.1889888724900337,
+        1.698519936462875,
+        2.1889888724900475,
+        3.7879660978517213
+      ]
+    },
+    {
+      "radius": "2",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r2.npz",
+      "matrix_sha256": "0d8a4a991c4c70c0a69b9e263a35c2352f6451a9ba72c572a7ea8aeef52df994",
+      "spectral_mean": 2.463597524061593,
+      "certified_interval": [
+        2.4635967887743337,
+        2.4635975257872658
+      ],
+      "sample_frequencies": [
+        -0.05,
+        -0.024999999999999998,
+        6.938893903907228e-18,
+        0.02500000000000001,
+        0.05
+      ],
+      "sample_noise": [
+        3.7768684703852133,
+        2.2970773149107058,
+        1.8199286604978504,
+        2.297077314910707,
+        3.7768684703852133
+      ]
+    },
+    {
+      "radius": "1",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r1.npz",
+      "matrix_sha256": "b80793f40287541d4281752cbff543cf6386bf27a758aae6bc8a321258a6557e",
+      "spectral_mean": 3.438566877480612,
+      "certified_interval": [
+        3.438562812266383,
+        3.4385668792080866
+      ],
+      "sample_frequencies": [
+        -0.05,
+        -0.024999999999999998,
+        6.938893903907228e-18,
+        0.02500000000000001,
+        0.05
+      ],
+      "sample_noise": [
+        3.885819228288852,
+        3.3814734029735503,
+        3.2215692624988197,
+        3.3814734029735494,
+        3.885819228288852
+      ]
+    }
+  ],
+  "spectra_not_claimed_pointwise_ordered": true,
+  "all_length_panel_shows_bounds_not_exact_optima": true,
+  "figure_source_sha256": "e215b517ac77219e646687666483962e11ebd5bcfcb36b5be6735aa7645ed3a6",
+  "figure_files": [
+    "figures/fig1_local_device.pdf",
+    "figures/fig2_shared_band_cost.pdf",
+    "figures/fig3_design_targets.pdf"
+  ]
+}

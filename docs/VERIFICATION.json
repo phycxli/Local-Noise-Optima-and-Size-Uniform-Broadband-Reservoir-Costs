@@ -1,0 +1,174 @@
+{
+  "version": "1.0.0",
+  "reference_environment_runs": {
+    "verification": {
+      "workflow": "verify",
+      "release": "1.0.0",
+      "environment": {
+        "python": "3.13.13",
+        "platform": "Windows-11-10.0.28000-SP0",
+        "dependencies": {
+          "numpy": "2.2.6",
+          "scipy": "1.16.2",
+          "matplotlib": "3.10.7",
+          "cvxpy": "1.9.3",
+          "clarabel": "0.11.1",
+          "mpmath": "1.3.0",
+          "sympy": "1.14.0"
+        }
+      },
+      "steps": [
+        {
+          "script": "scripts/audit_final_prl_proofs.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 0.201,
+          "log": "logs/audit_final_prl_proofs.txt"
+        },
+        {
+          "script": "scripts/check_rate_capped_band_optimization.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 4.944,
+          "log": "logs/check_rate_capped_band_optimization.txt"
+        },
+        {
+          "script": "scripts/check_size_uniform_resources.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 9.886,
+          "log": "logs/check_size_uniform_resources.txt"
+        },
+        {
+          "script": "scripts/audit_size_uniform_resources.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 8.303,
+          "log": "logs/audit_size_uniform_resources.txt"
+        },
+        {
+          "script": "scripts/check_boundary_argument_certificate.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 0.265,
+          "log": "logs/check_boundary_argument_certificate.txt"
+        }
+      ],
+      "passed": true,
+      "published_inputs_preserved": true,
+      "output_sha256": {
+        "results/rate_capped_band_optimization_certificate.json": "cdefeb61fa93c4cb8de0075d98db74cae4d928732627d14b7f133f2bd566c1d9",
+        "results/size_uniform_resources_certificate.json": "0480397a9c848f0843f67c28870d8755a6db462da60541a454b371b67fe8d11e",
+        "results/size_uniform_resources_audit.json": "e0ecfcbdef29d31c2ee071dbb5edbc85ac75587320fdce987f570a4fc8ae6848",
+        "results/final_prl_proof_audit.json": "5f62267cff26a64e213429457427f5549964e26b627fcfed40a7daaa60bd116c",
+        "results/boundary_argument_certificate_integrity.json": "2709ffc42b53c5d912bde212ff0f71c14f060004e1ffae174b01f10eac6cad42"
+      }
+    },
+    "figures": {
+      "workflow": "figures",
+      "release": "1.0.0",
+      "environment": {
+        "python": "3.13.13",
+        "platform": "Windows-11-10.0.28000-SP0",
+        "dependencies": {
+          "numpy": "2.2.6",
+          "scipy": "1.16.2",
+          "matplotlib": "3.10.7",
+          "cvxpy": "1.9.3",
+          "clarabel": "0.11.1",
+          "mpmath": "1.3.0",
+          "sympy": "1.14.0"
+        }
+      },
+      "steps": [
+        {
+          "script": "scripts/plot_reservoir_optimization.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 2.637,
+          "log": "logs/plot_reservoir_optimization.txt"
+        }
+      ],
+      "passed": true,
+      "published_inputs_preserved": true,
+      "output_sha256": {
+        "results/rate_capped_band_optimization_certificate.json": "67e7a7837ab90a49447281df7637f7333b3b28accafa445d20177bbaf1a8028b",
+        "results/size_uniform_resources_certificate.json": "0480397a9c848f0843f67c28870d8755a6db462da60541a454b371b67fe8d11e",
+        "results/size_uniform_resources_audit.json": "e0ecfcbdef29d31c2ee071dbb5edbc85ac75587320fdce987f570a4fc8ae6848",
+        "results/final_prl_proof_audit.json": "5f62267cff26a64e213429457427f5549964e26b627fcfed40a7daaa60bd116c",
+        "results/boundary_argument_certificate_integrity.json": "2709ffc42b53c5d912bde212ff0f71c14f060004e1ffae174b01f10eac6cad42",
+        "figures/fig1_local_device.pdf": "e260a2a8a24ec2384a9b754f569187fa38a102356cccc0a16d7fa4570c99b498",
+        "figures/fig1_local_device.png": "00701cb99cbbf60a7da708d7f8e3b6a5b8f8f1d997ea0b4afa5f5b2a4a307a53",
+        "figures/fig2_shared_band_cost.pdf": "9201f7ed9599dcc81e6609a172333dddd58a39fa5bf137ac31b3758520bb987f",
+        "figures/fig2_shared_band_cost.png": "81ef123cfa4d51b9a42302ad4e076438fbc8fdee94d438323c07a891c209939e",
+        "figures/fig3_design_targets.pdf": "96831f03d60a0219e119a5da813a67ef3fe10272b109ee7b0041dcb80c034c85",
+        "figures/fig3_design_targets.png": "9bccefddb27e1ae88e896fbe39d9d7b10a59f1eac5afb1f448451dc2079907a2",
+        "results/reports/physical_narrative_figure_audit.json": "9ea231db8af941d8e7ac88b7348bde24b5af509b930b7fc578eb88280194696c"
+      }
+    }
+  },
+  "scope": "Saved matrix certification, main figure regeneration, and a three-case optimizer smoke run.",
+  "supplementary_boundary_check": "Saved interval-box coverage and provenance; inherited CRT polynomials not reconstructed.",
+  "optimizer_smoke": {
+    "parameters": {
+      "N": 40,
+      "rate_cap": 8,
+      "halfwidth": "0.05",
+      "radii": [
+        "1",
+        "2",
+        "all"
+      ]
+    },
+    "fresh_optimization_cases": 3,
+    "all_rational_checks_passed": true,
+    "certified_rows": [
+      {
+        "N": 40,
+        "halfwidth": 0.05,
+        "rate_cap": 8.0,
+        "radius": "1",
+        "exact_matrix_checks_passed": true,
+        "minimum_psd_margin": 2.2882935835577853e-09,
+        "rational_lower": 3.3572808808000825,
+        "rational_upper": 3.3572817284274112,
+        "reported_lower": 3.3572808794506424,
+        "reported_upper": 3.3572817294978643,
+        "bound_gap": 8.476273290529379e-07,
+        "min_band_gain": 2.6550849397271334,
+        "whole_band_high_gain": true
+      },
+      {
+        "N": 40,
+        "halfwidth": 0.05,
+        "rate_cap": 8.0,
+        "radius": "2",
+        "exact_matrix_checks_passed": true,
+        "minimum_psd_margin": 1.4348309605049032e-09,
+        "rational_lower": 2.37098071861444,
+        "rational_upper": 2.370981301361221,
+        "reported_lower": 2.370980716916194,
+        "reported_upper": 2.3709813024305624,
+        "bound_gap": 5.827467811896891e-07,
+        "min_band_gain": 2.6550849397271334,
+        "whole_band_high_gain": true
+      },
+      {
+        "N": 40,
+        "halfwidth": 0.05,
+        "rate_cap": 8.0,
+        "radius": "all",
+        "exact_matrix_checks_passed": true,
+        "minimum_psd_margin": 2.0605912422952607e-09,
+        "rational_lower": 2.2930313903732498,
+        "rational_upper": 2.293032218454421,
+        "reported_lower": 2.293031389447574,
+        "reported_upper": 2.2930322195236736,
+        "bound_gap": 8.280811711312031e-07,
+        "min_band_gain": 2.6550849397271334,
+        "whole_band_high_gain": true
+      }
+    ],
+    "published_matrices_replaced": false
+  }
+}

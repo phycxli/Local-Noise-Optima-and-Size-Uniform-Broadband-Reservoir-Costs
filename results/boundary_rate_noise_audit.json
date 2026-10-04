@@ -1,0 +1,28 @@
+{
+  "general_PSD_checks_passed": 500,
+  "max_random_bound_violation": -0.09092802603872616,
+  "model_consistency_checks_passed": 12,
+  "noise_bound_at_crossing": "0.5000703125/R",
+  "feasible_local_rate_budget": 5.1,
+  "bound_at_rate_5p1": 0.0980530024509804,
+  "power_gain_at_crossings": {
+    "24": 0.34981638369697377,
+    "80": 0.32750551920299686,
+    "121": 0.32471933834241995,
+    "200": 0.32262270153788897
+  },
+  "no_SDP_optimality_claim": true,
+  "limiting_frequency_bracket_verified": true,
+  "omega_infinity_bracket": [
+    "0.2098976657",
+    "0.2098976659"
+  ],
+  "leading_1_over_m_shift_interval": [
+    2.6680631021963563,
+    2.668063228113115
+  ],
+  "ell_infinity_interval": [
+    1.086473910003248,
+    1.0864739427366457
+  ]
+}

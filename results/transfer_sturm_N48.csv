@@ -1,0 +1,3 @@
+N,degree_F,real_root_count_in_scan,real_pole_count_in_scan,multiplicity,omega_lo_rational,omega_hi_rational,omega_mid,signature_at_mid,Pi_direct_at_mid,sigma_min_C_at_mid,denominator_degree
+48,190,2,0,1,-24230/165011,-26859/182915,-0.14683869558554574,-3.02129944768021e-12,4.673557626177545,0.6804352494347402,96
+48,190,2,0,1,26859/182915,24230/165011,0.14683869558554574,-3.02129944768021e-12,4.673557626177545,0.6804352494347402,96

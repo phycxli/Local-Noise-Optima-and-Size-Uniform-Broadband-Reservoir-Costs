@@ -1,0 +1,42 @@
+{
+  "integrity_check_passed": true,
+  "real_box_count": 1349,
+  "complex_box_count": 610,
+  "response_box_count": 1349,
+  "inherited_exact_prefix": {
+    "count": 97,
+    "range": [
+      24,
+      120
+    ],
+    "coverage_and_exact_rational_height_checked": true,
+    "polynomials_reconstructed_this_run": false,
+    "sha256": {
+      "H_sign_variation_N24_80.csv": "af75d7dcb076c42ca975192a1eb83eb9a03dafdb0bca95ce1990f295751c165c",
+      "H_sign_variation_N81_120.csv": "6ebaf07c1185733e35131007122dde2c4210d42886ba909b7c2209c25281cd38"
+    }
+  },
+  "fresh_all_N_tail": [
+    121,
+    "infinity"
+  ],
+  "fresh_response_prefactor_scope": [
+    24,
+    "infinity"
+  ],
+  "analytic_gate": {
+    "checks": {
+      "low_sign": true,
+      "high_sign": true,
+      "real_monotonicity": true,
+      "local_rouche": true,
+      "disk_inside_extension": true
+    },
+    "low_C_tau_power_upper": 0.013404798181251605,
+    "high_C_tau_power_lower": 33.69998751029257,
+    "rouche_leading_margin_over_kappa_lower": 0.004793905899616637,
+    "rouche_perturbation_over_kappa_upper": 0.0010312691193104676,
+    "phase_upper_at_cutoff": 0.030790198432314102
+  },
+  "proof_level": "analytic derivation plus outward-rounded interval certificates; not a proof-assistant formalisation"
+}
