@@ -1,0 +1,33 @@
+{
+  "arguments": {
+    "sizes": [
+      40,
+      48,
+      64
+    ],
+    "halfwidths": [
+      0.05
+    ],
+    "caps": [
+      8.0,
+      32.0,
+      256.0
+    ],
+    "radii": [
+      "all",
+      "1",
+      "2"
+    ],
+    "tolerance": 2e-10,
+    "stem": "rate_capped_band_optimization",
+    "skip_pointwise": false
+  },
+  "source_sha256": "966356e3a37f24c211c5eab0b2d50e30004bf94c990d06bd7451bdd1f20795ae",
+  "python": "3.13.13",
+  "numpy": "2.2.6",
+  "cvxpy": "1.9.3",
+  "integration": "Exact rational Legendre polynomial Gram; quadrature is an independent check.",
+  "gain_minimum": "Analytic endpoint minimum from the positive symmetric probed drift.",
+  "certificate": "Primal Cholesky residual bounds; PSD dual factors and a stationarity row-norm correction.",
+  "scope": "Fixed scalar model, finite sizes, symmetric-band mean. No multiband or all-N claim."
+}

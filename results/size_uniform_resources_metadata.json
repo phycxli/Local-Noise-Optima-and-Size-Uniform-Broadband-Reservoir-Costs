@@ -1,0 +1,55 @@
+{
+  "arguments": {
+    "models": [
+      "uniform",
+      "dimerized"
+    ],
+    "bands": [
+      "0.03",
+      "0.05",
+      "0.07"
+    ],
+    "prefix": 64,
+    "stem": "size_uniform_resources"
+  },
+  "models": [
+    {
+      "name": "uniform",
+      "gamma": [
+        "6/5",
+        "6/5"
+      ],
+      "right": [
+        "1",
+        "1"
+      ],
+      "left": [
+        "1/4",
+        "1/4"
+      ],
+      "kappa_in": "1/5",
+      "kappa_out": "1/5"
+    },
+    {
+      "name": "dimerized",
+      "gamma": [
+        "6/5",
+        "23/20"
+      ],
+      "right": [
+        "23/20",
+        "17/20"
+      ],
+      "left": [
+        "3/20",
+        "7/20"
+      ],
+      "kappa_in": "1/5",
+      "kappa_out": "1/5"
+    }
+  ],
+  "source_sha256": "4c57573858b59febddac7a26af936a9c454a004d437a86fedfeae0b559ab976e",
+  "model_helper_sha256": "b787c1f1b894b9fc984619b861ffa12ba55d5a7255d9dfd6050f6bf2fe068d4f",
+  "solver_helper_sha256": "966356e3a37f24c211c5eab0b2d50e30004bf94c990d06bd7451bdd1f20795ae",
+  "purpose": "Finite-prefix witnesses plus a frequency-independent extension; all-N claims require the exact checker."
+}

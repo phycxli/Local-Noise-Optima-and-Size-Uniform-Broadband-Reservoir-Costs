@@ -1,0 +1,32 @@
+{
+  "scope": "fixed J=0.01 model; all integer N>=121; real |omega|<=2",
+  "interval_digits": 45,
+  "m0": 119,
+  "source_sha256": {
+    "scripts\\certify_boundary_evans_all_N.py": "da741565a4431502d43946c8da2af21c3744dab6161e62836c03b90805cc8875",
+    "scripts\\boundary_evans_interval.py": "c7b29a002e08204f8c385de65bbd298e7cf740bca08bd93032d9b45e5dad4679",
+    "scripts\\boundary_evans.py": "a690370c67f2b001e21828b8824175a148d3bc7e6d8ed56baaa0a0ae5938b421"
+  },
+  "analytic_gate": {
+    "checks": {
+      "low_sign": true,
+      "high_sign": true,
+      "real_monotonicity": true,
+      "local_rouche": true,
+      "disk_inside_extension": true
+    },
+    "low_C_tau_power_upper": 0.013404798181251605,
+    "high_C_tau_power_lower": 33.69998751029257,
+    "rouche_leading_margin_over_kappa_lower": 0.004793905899616637,
+    "rouche_perturbation_over_kappa_upper": 0.0010312691193104676,
+    "phase_upper_at_cutoff": 0.030790198432314102
+  },
+  "completed_parts": [
+    "real",
+    "complex"
+  ],
+  "real_box_count": 1349,
+  "real_certificate_sha256": "4e7f92d726faa55e8680c4b097937bdd2893baa25a6b6fb41e2a0a25d73522e5",
+  "complex_box_count": 610,
+  "complex_certificate_sha256": "362516ecad7d773a2c8ba4ef5f5493b4f8191dce143ea09c471c2476a91ab1aa"
+}

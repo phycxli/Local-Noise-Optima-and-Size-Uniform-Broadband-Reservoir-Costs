@@ -1,0 +1,7 @@
+N,degree_H,sign_variations,endpoint_sign_0,endpoint_sign_4,endpoint_product_sign,crt_modulus_bits,prime_count
+24,47,1,1,-1,-1,2592,130
+25,49,1,1,-1,-1,2711,136
+32,63,1,1,-1,-1,3469,174
+40,79,1,1,-1,-1,4366,219
+64,127,1,1,-1,-1,6998,351
+80,159,1,1,-1,-1,8772,440

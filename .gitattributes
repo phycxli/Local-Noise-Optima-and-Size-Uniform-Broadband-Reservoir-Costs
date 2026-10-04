@@ -1,0 +1,4 @@
+* -text whitespace=cr-at-eol,-blank-at-eof
+*.npz binary
+*.pdf binary
+*.png binary

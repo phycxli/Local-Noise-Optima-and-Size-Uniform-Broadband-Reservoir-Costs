@@ -1,0 +1,18 @@
+{
+  "certified": true,
+  "scope": "fixed J=0.01; all integer N>=24; real |omega|<=2",
+  "formula": "chi_oi^sharp=(a_N/d_N)*lambda_a^(-(N-2))",
+  "conservative_prefactor_bounds": [
+    0.15,
+    1.32
+  ],
+  "box_count": 1349,
+  "certified_global_lower": 0.159333327981627,
+  "certified_global_upper": 1.3178736221158378,
+  "source_sha256": {
+    "scripts\\certify_boundary_response_prefactor.py": "79f6ca184ae452d346ee655233389bb89f7320b944de4c9e67a54d3eec8bab0a",
+    "scripts\\boundary_evans_interval.py": "c7b29a002e08204f8c385de65bbd298e7cf740bca08bd93032d9b45e5dad4679",
+    "scripts\\boundary_evans.py": "a690370c67f2b001e21828b8824175a148d3bc7e6d8ed56baaa0a0ae5938b421"
+  },
+  "certificate_sha256": "722648cf15e7aeeb9f66d6e40a52f26b64d7f1c83b19674b762df2c40777bd28"
+}

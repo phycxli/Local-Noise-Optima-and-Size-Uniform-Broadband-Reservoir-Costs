@@ -1,0 +1,7 @@
+numpy==2.2.6
+scipy==1.16.2
+matplotlib==3.10.7
+cvxpy==1.9.3
+clarabel==0.11.1
+mpmath==1.3.0
+sympy==1.14.0
