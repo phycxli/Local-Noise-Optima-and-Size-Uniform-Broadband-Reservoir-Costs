@@ -1,0 +1,134 @@
+{
+  "recorded_at_utc": "2026-10-04T17:29:37.420537+00:00",
+  "scope": "Proposed N=64 finite-linewidth implementation; numerical predictions, no measured data or optimality/all-length certificate",
+  "source_sha256": "920a8f230d51ae6803f6e74b2b1c9f834328bdef8158af62e9b3a06112401b35",
+  "input_sha256": {
+    "results\\rate_capped_band_optimization_certificate.json": "67e7a7837ab90a49447281df7637f7333b3b28accafa445d20177bbaf1a8028b",
+    "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r1.npz": "b80793f40287541d4281752cbff543cf6386bf27a758aae6bc8a321258a6557e",
+    "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r2.npz": "0d8a4a991c4c70c0a69b9e263a35c2352f6451a9ba72c572a7ea8aeef52df994",
+    "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_rall.npz": "4ce36d088c0d8467c51670edf73c0b6320e3dbf4e725831f2472e1caa4ea1701"
+  },
+  "units": "J0/(2*pi)=1 MHz; all listed rates are angular rates divided by J0",
+  "settings": {
+    "N": 64,
+    "band_halfwidth": 0.05,
+    "complete_rate_cap": 8.0,
+    "auxiliary_energy_linewidth": 50.0,
+    "intrinsic_energy_loss": 0.01,
+    "baseline_mixing_fraction": 0.005,
+    "all_internal_bath_occupations": 0.001,
+    "passive_port_occupations": 0.0,
+    "frequency_grid_points": 1601
+  },
+  "baseline_bond_single_endpoint_coupling_MHz": 2.7950849718747373,
+  "finite_auxiliary_min_band_power_gain": 62.028998801597226,
+  "finite_auxiliary_min_band_gain_dB": 17.925947713559914,
+  "same_effective_frequency_response_for_all_configurations": true,
+  "rows": [
+    {
+      "radius": "1",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r1.npz",
+      "complete_rate_extrema": {
+        "gain": [
+          7.900168718750736e-05,
+          3.4687710076317835
+        ],
+        "complete_loss": [
+          0.012032358274313561,
+          7.983992920928477
+        ],
+        "programmed_loss": [
+          0.0020323582743154746,
+          7.97399292092847
+        ]
+      },
+      "band_average_noise": {
+        "ideal_saved": 3.4385668774805844,
+        "finite_auxiliary_cold": 4.429805744497797,
+        "finite_auxiliary_thermal": 4.4376691376183945
+      },
+      "maximum_single_endpoint_coupling_MHz": 6.8467047011463835,
+      "factorization": "Lower Cholesky columns; local columns have support diameter at most the specified range",
+      "quadrature_step_halving_difference": {
+        "ideal_saved": 1.9317880628477724e-13,
+        "finite_auxiliary_cold": 2.113864638886298e-13,
+        "finite_auxiliary_thermal": 2.1227464230832993e-13
+      },
+      "augmented_spectral_abscissa": -0.18598030117333994,
+      "full_vs_eliminated_response_relative_residual": 2.6997035268834806e-14,
+      "full_vs_eliminated_cold_noise_relative_residual": 4.220141622911157e-14
+    },
+    {
+      "radius": "2",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r2.npz",
+      "complete_rate_extrema": {
+        "gain": [
+          0.00022838387248832367,
+          5.545949531769063
+        ],
+        "complete_loss": [
+          0.012023910379005066,
+          7.984240419357198
+        ],
+        "programmed_loss": [
+          0.0020239103790032744,
+          7.974240419357196
+        ]
+      },
+      "band_average_noise": {
+        "ideal_saved": 2.4635975240615413,
+        "finite_auxiliary_cold": 3.459887610887816,
+        "finite_auxiliary_thermal": 3.465811167741195
+      },
+      "maximum_single_endpoint_coupling_MHz": 8.297110375643573,
+      "factorization": "Lower Cholesky columns; local columns have support diameter at most the specified range",
+      "quadrature_step_halving_difference": {
+        "ideal_saved": 3.552713678800501e-13,
+        "finite_auxiliary_cold": 3.708144902248023e-13,
+        "finite_auxiliary_thermal": 3.708144902248023e-13
+      },
+      "augmented_spectral_abscissa": -0.18801190765156015,
+      "full_vs_eliminated_response_relative_residual": 3.081110080301488e-14,
+      "full_vs_eliminated_cold_noise_relative_residual": 5.0773171164065446e-14
+    },
+    {
+      "radius": "all",
+      "matrix_file": "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_rall.npz",
+      "complete_rate_extrema": {
+        "gain": [
+          0.011713063758077282,
+          4.151748426397329
+        ],
+        "complete_loss": [
+          0.012002262863946005,
+          6.703088214509021
+        ],
+        "programmed_loss": [
+          0.0020022628639434514,
+          6.693088214509023
+        ]
+      },
+      "band_average_noise": {
+        "ideal_saved": 2.374013897053358,
+        "finite_auxiliary_cold": 3.369829473318524,
+        "finite_auxiliary_thermal": 3.3755729138967636
+      },
+      "maximum_single_endpoint_coupling_MHz": 7.528909533836363,
+      "factorization": "Lower Cholesky columns; local columns have support diameter at most the specified range",
+      "quadrature_step_halving_difference": {
+        "ideal_saved": 1.616484723854228e-13,
+        "finite_auxiliary_cold": 1.4654943925052066e-13,
+        "finite_auxiliary_thermal": 1.4699352846037073e-13
+      },
+      "augmented_spectral_abscissa": -0.18895459565868336,
+      "full_vs_eliminated_response_relative_residual": 3.1887729014710794e-14,
+      "full_vs_eliminated_cold_noise_relative_residual": 5.159579740342871e-14
+    }
+  ],
+  "range_one_minus_two": {
+    "ideal_saved": 0.9749693534190431,
+    "finite_auxiliary_cold": 0.9699181336099807,
+    "finite_auxiliary_thermal": 0.9718579698771994
+  },
+  "all_checks_passed": true
+}

@@ -77,10 +77,151 @@
   ],
   "spectra_not_claimed_pointwise_ordered": true,
   "all_length_panel_shows_bounds_not_exact_optima": true,
-  "figure_source_sha256": "e215b517ac77219e646687666483962e11ebd5bcfcb36b5be6735aa7645ed3a6",
+  "figure_source_sha256": "b6a3d67fc0e2f686a27defadbf6d65b6a4468fad39bd83c64b9bda64094e0558",
+  "device_schematic": {
+    "physical_sign_check": {
+      "c": "5/8",
+      "v": "3/8",
+      "gamma": "6/5",
+      "gain_relative_phases": [
+        "0",
+        "0"
+      ],
+      "loss_relative_phases": [
+        "0",
+        "pi"
+      ],
+      "exact_chain_checks": [
+        {
+          "N": 2,
+          "exact_drift_agreement": true
+        },
+        {
+          "N": 3,
+          "exact_drift_agreement": true
+        },
+        {
+          "N": 8,
+          "exact_drift_agreement": true
+        }
+      ],
+      "adjoint_lindblad_first_moment_residual": 2.6645352591003757e-15,
+      "relative_minus_is_not_a_negative_rate": true
+    },
+    "geometry_check": {
+      "text_labels": 29,
+      "label_collisions": [],
+      "all_labels_within_figure": true,
+      "equal_axis_scale": true,
+      "minimum_diagram_font_pt": 7.2
+    },
+    "figure_size_inches": [
+      3.38,
+      3.0
+    ],
+    "raster_dpi": 600,
+    "columns": 1,
+    "panel_a_crop_axis": "vertical",
+    "panel_a_crop_fraction": 0.5,
+    "panel_labels_only": [
+      "(a)",
+      "(b)"
+    ],
+    "rendering": "Editable axonometric chip concept above an effective drift and Lindblad-jump model",
+    "experimental_scope": "Proposed hardware; repeated bonds and the external measurement chain are omitted",
+    "diagram_references": [
+      "https://www.nature.com/articles/s41467-017-00447-1/figures/2",
+      "https://arxiv.org/html/1512.00078v1#S0.F1"
+    ],
+    "pointwise_data_sha256": "ccc56a18e95c94f5e60f0e7e94a03036b1b136e4e99bb022e0c85027a4e5a449",
+    "files_sha256": {
+      "figures/fig1_local_device.pdf": "4d6639da2adc531f5262e43372beca3cd11b182d323754424b51cc9b27c81a15",
+      "figures/fig1_local_device.png": "be020b8381d5655b5786c19d4e7cdd2445c053e58dac53275481f37c3188c0dc"
+    }
+  },
+  "presentation": {
+    "pointwise": {
+      "figure_size_inches": [
+        3.38,
+        2.55
+      ],
+      "text_labels": 10,
+      "label_collisions": [],
+      "all_labels_within_figure": true,
+      "all_backgrounds_pure_white": true,
+      "visible_grid_lines": 0,
+      "bottom_center_panel_labels": [],
+      "minimum_font_pt": 7.2,
+      "displayed_line_data_sha256": {
+        "pointwise_original": "b7a2df05be422f178eee8db5856f289aca6a32a40b7d40ac6847890c5cd02888",
+        "pointwise_fixed_drift": "a862421aee245f0ca209f67b227c37f4f0b3be0cb07331e2533df0f6ca882b16",
+        "pointwise_local": "4838f67ade44cefdfb228ce84caa338ce6e5314be5a643462ec911f7a6ec88a4",
+        "pointwise_caves": "0cc4bc7a0b07eff4513875eed4a8ea407c2776e3a5b70a8d7b5c65e71f94d014",
+        "zoom_fixed_drift": "b7b1e9880aa13e89ebee19e794db66cd15dfeeb593470762ab80f88a67d48a6c",
+        "zoom_local": "14cdf4954310ada73283d8866bb2433cccdfe3db7e441adfea6a8cdbffd90228",
+        "zoom_caves": "0a25fcd51270bd32e46ab9d52c3b39d95b62d892d3ccfcb89e9903cbcadd9f8c"
+      }
+    },
+    "shared": {
+      "figure_size_inches": [
+        7.05,
+        2.9
+      ],
+      "text_labels": 23,
+      "label_collisions": [],
+      "all_labels_within_figure": true,
+      "all_backgrounds_pure_white": true,
+      "visible_grid_lines": 0,
+      "bottom_center_panel_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "minimum_font_pt": 7.2,
+      "displayed_line_data_sha256": {
+        "shared_spectrum_all": "c5c9b5be6ef2073752541a7edf906fec57e8eacc35c6d132fb97e236e46bcfe2",
+        "shared_spectrum_2": "6ba23a785815454b5c449ba2d14d7379343af5ec3c849d252fdbc56a330bf8f8",
+        "shared_spectrum_1": "b9646f8b0a127e35a82c3bafad06aa396d0a3381560c1339d1852f27ed89c0a9",
+        "shared_adaptive_floor": "436e5409739357528c7b093439450b1f1fef2c880b87a546e9560c757e72c056"
+      }
+    },
+    "scientific_data_unchanged": true,
+    "description": "Panel labels only in Fig. 1; pure-white Figs. 2-3; Figs. 3-4 use bottom-centered panel letters without panel titles",
+    "design": {
+      "figure_size_inches": [
+        3.38,
+        4.6
+      ],
+      "text_labels": 21,
+      "label_collisions": [],
+      "all_labels_within_figure": true,
+      "all_backgrounds_pure_white": true,
+      "visible_grid_lines": 27,
+      "bottom_center_panel_labels": [
+        "(a)",
+        "(b)",
+        "(c)"
+      ],
+      "minimum_font_pt": 6.8,
+      "displayed_line_data_sha256": {
+        "design_rate_1": "ba5ab6edbe4f595523028fa9a7a0f7a3250f75c4e60b691e817acd8f784ea858",
+        "design_rate_2": "c3b5d9e16238207d2fc9ee88c42f02318e5a787156beb7fb33ab3b736371dc70",
+        "design_reference": "10d1ed85581068f55083df26c1826e1abc2ef86b70ec24a398a200138926d47f",
+        "design_target": "c3e85e31e09d2dc13b0ffb452d5560bf44943c65ff92a177e5fcea5ab79ca6d8",
+        "design_necessary_rate": "818225a472dfc13d0bca2cd0595c6e6caf6758618fc33b2e7e951aa300b52cb1",
+        "design_bandwidth_uniform": "1c6c7938968213cbd811d578469f34c0efb146750bfc9f572a723c8d90f5bb7f",
+        "design_bandwidth_dimerized": "2bdb8d82ed221c8186165ecd701429ccbd5578608124549b170a3a9eeb8d89bf",
+        "design_range_uniform": "4c8426ee2da35e3560eb38ef573d87d226d8cb3427b1d9ac4cbaf3b5bee7a47f",
+        "design_range_target_uniform": "60a77f5cded1b7de4fac056d4ff191632aff8add72ec1e31388d819a31d72bb7",
+        "design_range_dimerized": "ada1819d29b94a715909c18d7565fbf393701055b39110c45d5394153a975716",
+        "design_range_target_dimerized": "c78dccb69cf37d20f82a0442702c57a873797e31af81940e6e0e72cb78364290"
+      }
+    }
+  },
   "figure_files": [
     "figures/fig1_local_device.pdf",
-    "figures/fig2_shared_band_cost.pdf",
-    "figures/fig3_design_targets.pdf"
+    "figures/fig2_pointwise_noise.pdf",
+    "figures/fig3_shared_band_cost.pdf",
+    "figures/fig4_design_targets.pdf"
   ]
 }

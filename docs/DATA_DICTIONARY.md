@@ -11,6 +11,7 @@ measured pump power. Matrix range `r` counts physical sites.
 |---|---|
 | Uniform scalar chain | `t_R=1`, `t_L=0.25`, `gamma=1.2`, `kappa_in=kappa_out=0.2`. |
 | Dimerized scalar chain | Alternating `gamma=(6/5,23/20)`, `t_R=(23/20,17/20)`, `t_L=(3/20,7/20)`; `kappa_in=kappa_out=1/5`. The first site/bond uses index zero. |
+| Pointwise two-orbital validation | `8,9,10` cells at detunings `-0.15,0,0.15`; onsite block `[[-1,-0.12i],[-0.12i,-0.9]]`, right/left blocks `diag(1.2,1.0)` / `diag(0.10,0.08)`. Ports of rate `0.2` couple to the first orbital at each end. This is separate from both the dimerized scalar chain and the boundary-certificate model. |
 | Supplementary two-band chain | Fixed `J=0.01` boundary-certificate instance; parameters and port conventions are specified by the boundary scripts. |
 
 `src/shared_band_resources.py` stores model parameters as exact fractions.
@@ -22,7 +23,8 @@ the fixed-drift differences are unchanged by that conversion.
 
 | Dataset | Meaning |
 |---|---|
-| `results/local_noise_optimization_explicit.csv` | Explicit pointwise local construction and baseline comparison used in main Fig. 1. |
+| `results/local_noise_optimization_explicit.csv` | Explicit pointwise local construction and baseline comparison used in main Fig. 2. |
+| `results/finite_frequency_local_optimality_scalar.csv` and `results/finite_frequency_local_optimality_multiband.csv` | Fig. S1 samples, ordered by size then detuning; SDP discrepancies and explicit-kernel errors are numerical residuals, not a physical locality penalty. |
 | `results/rate_capped_band_optimization.csv` | 27 shared-band optimizations: `N=40,48,64`, `R=8,32,256`, and `r=1,2,all`, at halfwidth `0.05`. |
 | `results/rate_capped_band_optimization_metadata.json` | Optimizer arguments, environment, and source provenance. |
 | `results/rate_capped_band_optimization_certificate.json` | Exact checks and conservative optimum intervals for the saved finite-chain matrices. |
@@ -32,6 +34,7 @@ the fixed-drift differences are unchanged by that conversion.
 | `results/size_uniform_resources_summary.csv` | Tabular `alpha`, `beta`, lower and upper bounds, locality gaps, and necessary rates. |
 | `results/size_uniform_resources_audit.json` | Continuous halfwidth interval, stronger gain checks, and two explicit range-two constructions. |
 | `results/final_prl_proof_audit.json` | Independent finite-example checks of conventions, local kernels, prefix identities, and bridge extensions. |
+| `results/reports/experimental_realization_audit_2026_10_05.json` | Finite-auxiliary numerical predictions for the specified feasible devices, including intrinsic loss and thermal baths; no measured data or whole-band gain certificate. |
 
 In CSV files, `matrix_file` is relative to the repository root, and
 `matrix_sha256` is the hash of the NPZ archive where present. `halfwidth` defines

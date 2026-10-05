@@ -1,7 +1,8 @@
 # Local Noise Optima and Size-Uniform Broadband Reservoir Costs
 
 Research data and Python calculation code for the work by Chengxi Li, Hao Zhu,
-and Wanzi Sun. Release **v1.0.0** accompanies the manuscript of the same title.
+and Wanzi Sun. Release **v1.1.0** accompanies the four-figure manuscript and
+its finite-auxiliary numerical comparison. The earlier `v1.0.0` tag is retained.
 
 A finite boundary region provides a noise-rate lower bound, while an explicit
 reservoir extension provides a size-uniform achievable ceiling. Their separation
@@ -19,7 +20,7 @@ Use Python 3.11 or newer. The reference calculations used Python 3.13.13;
 the dependency versions used for this release are pinned in `requirements.txt`.
 
 ```bash
-git clone --branch v1.0.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
+git clone --branch v1.1.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
 cd Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs
 python -m venv .venv
 ```
@@ -36,14 +37,15 @@ Activate the environment:
 source .venv/bin/activate
 ```
 
-Install the dependencies, verify the release, and regenerate the three main
-figures:
+Install the dependencies, verify the release, and regenerate the four main
+figures and Fig. S1:
 
 ```bash
 python -m pip install -r requirements.txt
 python scripts/reproduce.py manifest
 python scripts/reproduce.py verify
 python scripts/reproduce.py figures
+python scripts/reproduce.py experiment
 ```
 
 `verify` checks the saved matrices using exact rational arithmetic, rechecks
@@ -53,8 +55,16 @@ It does not rerun the optimizer. The final line is `PASS: verify`; the report is
 `reproduction/verification_report.json` and individual logs are in
 `reproduction/logs/`. Rational checks can take several minutes.
 
-`figures` regenerates `fig1_local_device`, `fig2_shared_band_cost`, and
-`fig3_design_targets` as PDF and PNG under `reproduction/figures/`.
+`figures` regenerates `fig1_local_device`, `fig2_pointwise_noise`,
+`fig3_shared_band_cost`, `fig4_design_targets`, and
+`finite_frequency_local_optimality` as PDF and PNG under `reproduction/figures/`.
+Fig. S1 uses archived CSVs without rerunning the pointwise optimizer.
+
+`experiment` computes the specified finite-auxiliary, intrinsic-loss, and
+thermal-bath comparison. Its report is
+`reproduction/results/reports/experimental_realization_audit_2026_10_05.json`.
+These are numerical predictions for a proposed device; no experimental data
+were collected. Sampled gain minima are distinct from whole-band certificates.
 All workflows run on a working copy under `reproduction/`, preserving the
 published inputs and their recorded hashes.
 
@@ -69,7 +79,7 @@ published inputs and their recorded hashes.
 | `docs/REPRODUCIBILITY.md` | Commands, computational stages, outputs, and verification limits. |
 | `docs/DATA_DICTIONARY.md` | Model parameters, observables, array meanings, and scope. |
 | `docs/file_catalog.json` | File-level classification of the four scientific workflows. |
-| `docs/VERIFICATION.json` | Results of saved-certificate verification and main figure regeneration in a fresh environment. |
+| `docs/VERIFICATION.json` | Saved-certificate, figure, and finite-auxiliary runs in the reference environment. |
 | `release_manifest.json` | SHA256 and byte length of each release file. |
 | `DATA_AVAILABILITY.md` | English and Chinese data and code availability statements. |
 
@@ -92,7 +102,7 @@ the acceptance criterion. See [reproduction details](docs/REPRODUCIBILITY.md).
 
 ## Citation and License
 
-Use the `CITATION.cff` metadata and specify release `v1.0.0` when referring to
+Use the `CITATION.cff` metadata and specify release `v1.1.0` when referring to
 these data and code. The repository retains its existing [MIT license](LICENSE).
 The fixed release can be downloaded from the tag's **Code / Download ZIP** menu.
 
@@ -101,6 +111,7 @@ The fixed release can be downloaded from the tag's **Code / Download ZIP** menu.
 本仓库公开论文对应的计算代码、数值数据、储库矩阵和认证因子。四类工作流及
 文件清单见 `docs/file_catalog.json`。先安装 `requirements.txt`，再运行
 `python scripts/reproduce.py verify` 核验证书，运行
-`python scripts/reproduce.py figures` 重绘三张正文图。计算输出集中写入
+`python scripts/reproduce.py figures` 重绘四张正文图和图 S1，运行
+`python scripts/reproduce.py experiment` 复现有限辅助器数值预测。计算输出集中写入
 `reproduction/`，保留发布数据及其校验值。重新求解优化问题使用 `optimize`
 工作流；模型适用条件、数据含义和补充材料复现命令见 `docs/`。

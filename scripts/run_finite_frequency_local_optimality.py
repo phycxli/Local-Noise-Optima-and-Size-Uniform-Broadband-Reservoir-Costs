@@ -13,6 +13,7 @@ construction at finite frequency for a scalar chain and a two-band chain.
 
 from __future__ import annotations
 
+import argparse
 import csv
 from pathlib import Path
 
@@ -344,8 +345,12 @@ def write_summary(
 def make_figure(scalar: list[dict[str, float]], multiband: list[dict[str, float]]) -> None:
     FIG_DIR.mkdir(exist_ok=True)
     ARXIV_FIG_DIR.mkdir(parents=True, exist_ok=True)
+    plt.rcParams.update({"figure.facecolor": "white", "axes.facecolor": "white",
+                         "font.size": 8, "axes.linewidth": 0.6,
+                         "pdf.fonttype": 42, "ps.fonttype": 42})
     fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.45), constrained_layout=True)
-    for omega in sorted({row["omega"] for row in scalar}):
+    colors = ("#33679A", "#A13A35", "#397D66")
+    for color, omega in zip(colors, sorted({row["omega"] for row in scalar})):
         subset = sorted((row for row in scalar if row["omega"] == omega), key=lambda r: r["N"])
         axes[0].semilogy(
             [row["N"] for row in subset],
@@ -353,31 +358,36 @@ def make_figure(scalar: list[dict[str, float]], multiband: list[dict[str, float]
             "o-",
             ms=2.5,
             lw=0.9,
+            color=color,
             label=rf"$\omega={omega:g}$",
         )
     axes[0].set_title("(a) Scalar optimum", loc="left", fontsize=9.0)
-    axes[0].set_xlabel(r"size $N$")
-    axes[0].set_ylabel(r"$\mathcal{N}_{R=1}^{\rm exc}$")
+    axes[0].set_xlabel(r"chain length $N$")
+    axes[0].set_ylabel(r"$\mathcal{N}_{r=1}^{\rm exc}$")
     axes[0].legend(frameon=False, ncol=2, fontsize=6.0)
 
     gaps = np.array([abs(row["sdp_R1"] - row["sdp_Rinf"]) for row in scalar])
-    axes[1].semilogy(np.arange(len(gaps)), np.maximum(gaps, 1.0e-10), "o", ms=2.5)
-    axes[1].axhline(1.0e-6, color="0.4", ls=":", lw=0.8)
-    axes[1].set_title("(b) Scalar locality gap", loc="left", fontsize=9.0)
-    axes[1].set_xlabel("finite-frequency sample")
-    axes[1].set_ylabel(r"$|\mathcal{N}_{R=1}-\mathcal{N}_{\infty}|$")
+    axes[1].semilogy(np.arange(1, len(gaps) + 1), gaps, "o", ms=2.5, color=colors[0])
+    axes[1].set_title("(b) Scalar SDP discrepancy", loc="left", fontsize=9.0)
+    axes[1].set_xlabel("sample index")
+    axes[1].set_ylabel(r"$|\mathcal{N}_{r=1}^{\rm exc}-\mathcal{N}_{\rm all}^{\rm exc}|$")
 
     mb_gaps = np.array([abs(row["sdp_R1"] - row["sdp_Rinf"]) for row in multiband])
     mb_errors = np.array([abs(row["explicit_error"]) for row in multiband])
-    axes[2].semilogy(mb_gaps, "o-", ms=2.5, lw=0.9, label="two-band SDP gap")
-    axes[2].semilogy(mb_errors, "s--", ms=2.5, lw=0.9, label="explicit error")
-    axes[2].axhline(1.0e-6, color="0.4", ls=":", lw=0.8)
+    indices = np.arange(1, len(mb_gaps) + 1)
+    axes[2].semilogy(indices, mb_gaps, "o-", ms=2.5, lw=0.9,
+                     color=colors[0], label="two-band SDP discrepancy")
+    axes[2].semilogy(indices, mb_errors, "s--", ms=2.5, lw=0.9,
+                     color=colors[1], label="explicit-kernel error")
     axes[2].set_title("(c) Two-band validation", loc="left", fontsize=9.0)
-    axes[2].set_xlabel("finite-frequency sample")
+    axes[2].set_xlabel("sample index")
     axes[2].set_ylabel("absolute deviation")
     axes[2].legend(frameon=False, fontsize=6.0)
     for ax in axes:
         ax.grid(alpha=0.18, lw=0.5)
+    for ax in axes[1:]:
+        ax.set_xticks([1, 3, 5, 7, 9])
+        ax.set_xlim(0.5, 9.5)
     for extension in ("pdf", "png"):
         path = FIG_DIR / f"finite_frequency_local_optimality.{extension}"
         fig.savefig(path, dpi=260 if extension == "png" else None)
@@ -386,16 +396,30 @@ def make_figure(scalar: list[dict[str, float]], multiband: list[dict[str, float]
 
 
 def main() -> None:
-    scalar = run_scalar()
-    multiband = run_multiband()
-    write_csv("finite_frequency_local_optimality_scalar.csv", scalar)
-    write_csv("finite_frequency_local_optimality_multiband.csv", multiband)
-    write_summary(scalar, multiband)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--plot-only", action="store_true",
+                        help="Regenerate the figure from saved CSVs without optimization.")
+    args = parser.parse_args()
+    if args.plot_only:
+        def read_saved(name: str) -> list[dict[str, float]]:
+            with (RES_DIR / name).open(encoding="utf-8", newline="") as handle:
+                return [{key: float(value) for key, value in row.items()
+                         if key != "model"}
+                        for row in csv.DictReader(handle)]
+
+        scalar = read_saved("finite_frequency_local_optimality_scalar.csv")
+        multiband = read_saved("finite_frequency_local_optimality_multiband.csv")
+    else:
+        scalar = run_scalar()
+        multiband = run_multiband()
+        write_csv("finite_frequency_local_optimality_scalar.csv", scalar)
+        write_csv("finite_frequency_local_optimality_multiband.csv", multiband)
+        write_summary(scalar, multiband)
     make_figure(scalar, multiband)
     print(f"scalar samples: {len(scalar)}")
     print(f"multiband samples: {len(multiband)}")
     print(
-        "max scalar locality gap:",
+        "max scalar SDP discrepancy:",
         max(abs(row["sdp_R1"] - row["sdp_Rinf"]) for row in scalar),
     )
     print(
@@ -403,7 +427,7 @@ def main() -> None:
         max(abs(row["explicit_error"]) for row in scalar),
     )
     print(
-        "max two-band locality gap:",
+        "max two-band SDP discrepancy:",
         max(abs(row["sdp_R1"] - row["sdp_Rinf"]) for row in multiband),
     )
     print(

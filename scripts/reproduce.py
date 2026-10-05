@@ -24,7 +24,9 @@ VERIFY = [
 ]
 WORKFLOWS = {
     "verify": VERIFY,
-    "figures": [("plot_reservoir_optimization.py", [])],
+    "figures": [("plot_reservoir_optimization.py", []),
+                ("run_finite_frequency_local_optimality.py", ["--plot-only"])],
+    "experiment": [("audit_experimental_realization.py", [])],
     "optimize": [
         ("run_rate_capped_band_optimization.py", []),
         ("check_rate_capped_band_optimization.py", []),
@@ -101,9 +103,15 @@ def output_summary(output: Path, workflow: str) -> dict:
              "results/boundary_argument_certificate_integrity.json"]
     if workflow in ("figures", "optimize"):
         files += [f"figures/{name}.{extension}" for name in
-                  ("fig1_local_device", "fig2_shared_band_cost", "fig3_design_targets")
+                  ("fig1_local_device", "fig2_pointwise_noise", "fig3_shared_band_cost",
+                   "fig4_design_targets")
                   for extension in ("pdf", "png")]
         files.append("results/reports/physical_narrative_figure_audit.json")
+    if workflow == "figures":
+        files += [f"figures/finite_frequency_local_optimality.{extension}"
+                  for extension in ("pdf", "png")]
+    if workflow == "experiment":
+        files = ["results/reports/experimental_realization_audit_2026_10_05.json"]
     return {relative: sha256(output / relative) for relative in files
             if (output / relative).is_file()}
 
@@ -130,7 +138,7 @@ def main() -> None:
         print(f"Running {name} ...", flush=True)
         start = time.monotonic()
         log = output / "logs" / (Path(name).stem + ".txt")
-        command = [sys.executable, str(output / "scripts" / name), *arguments]
+        command = [sys.executable, "-X", "utf8", str(output / "scripts" / name), *arguments]
         with log.open("w", encoding="utf-8") as handle:
             completed = subprocess.run(command, cwd=output, stdout=handle,
                                        stderr=subprocess.STDOUT, text=True)

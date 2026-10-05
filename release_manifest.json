@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
-  "release_date": "2026-10-04",
+  "version": "1.1.0",
+  "release_date": "2026-10-05",
   "title": "Local Noise Optima and Size-Uniform Broadband Reservoir Costs",
-  "copied_scientific_files": 217,
+  "copied_scientific_files": 192,
   "files": [
     {
       "path": ".gitattributes",
@@ -17,32 +17,32 @@
     {
       "path": "CITATION.cff",
       "bytes": 917,
-      "sha256": "d41477d07c345e27142817680f5a082e769006f84bb220d7cc913e8b7796bd6c"
+      "sha256": "eb3de4a877501ed7071008ab41c6b5c3b507b195be5fa02ec7312ca96b70597c"
     },
     {
       "path": "DATA_AVAILABILITY.md",
-      "bytes": 902,
-      "sha256": "322c80717921c110040a9e8dde5590d3b971764adfe2ae6d46afc9ddf332b155"
+      "bytes": 1080,
+      "sha256": "7572f18f2fb5d26c6a97c88d2db8ebbf7b21745cca8a2b50d4ad9f6410f76c6a"
     },
     {
       "path": "docs/DATA_DICTIONARY.md",
-      "bytes": 5681,
-      "sha256": "471ba13ea4e41eec8a4e7130a79f5143fd3f41bf3182caf3d052d49107a197b7"
+      "bytes": 6527,
+      "sha256": "743516a2d452cbb34c0d254351b04cd31605ec75e1fecf2e916a7ecc37c3d888"
     },
     {
       "path": "docs/file_catalog.json",
-      "bytes": 11939,
-      "sha256": "65d22324819a57077250774ac1a45333cdd29fb27a5cd3c4963b02ab208e0b09"
+      "bytes": 11341,
+      "sha256": "22f4778184662a2139e24649f120b8e8b9188211a1757bf9295edcda8c6f356f"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
-      "bytes": 5201,
-      "sha256": "d0c1f54b13be1e773d03b63859a36b6b2d0c067f4365f7c63edcf5d15eb44366"
+      "bytes": 6116,
+      "sha256": "b5b72d8711751c38bcb039ecbfd0bfa20c250dcb2957ec32c0ef934434d121f3"
     },
     {
       "path": "docs/VERIFICATION.json",
-      "bytes": 6863,
-      "sha256": "cf38b8638642acd3cf3974f7652eb995a28f53c6cac527c97a7b4c5f41ee60b8"
+      "bytes": 8696,
+      "sha256": "f1bdd8db405c1c3af2147bd8cbdee767cecdb8a201d5152abf4af6b67061d2c6"
     },
     {
       "path": "figures/covariance_lower_bound.png",
@@ -71,13 +71,23 @@
     },
     {
       "path": "figures/fig1_local_device.pdf",
-      "bytes": 22446,
-      "sha256": "0e5eb8317b085b03f058d3b8e428c6474dfd9391ffe12937a591285a8a80c8a7"
+      "bytes": 29113,
+      "sha256": "4d6639da2adc531f5262e43372beca3cd11b182d323754424b51cc9b27c81a15"
     },
     {
       "path": "figures/fig1_local_device.png",
-      "bytes": 69850,
-      "sha256": "00701cb99cbbf60a7da708d7f8e3b6a5b8f8f1d997ea0b4afa5f5b2a4a307a53"
+      "bytes": 173108,
+      "sha256": "be020b8381d5655b5786c19d4e7cdd2445c053e58dac53275481f37c3188c0dc"
+    },
+    {
+      "path": "figures/fig2_pointwise_noise.pdf",
+      "bytes": 20227,
+      "sha256": "50a84a9994e10b35696992e40a3f374637f6e90d50bcd992bf1ccf11397f297c"
+    },
+    {
+      "path": "figures/fig2_pointwise_noise.png",
+      "bytes": 168327,
+      "sha256": "88c938a3077bc4961b862615ec2ff4ee279c194fe88d31d367d5378d0d13d0d0"
     },
     {
       "path": "figures/fig2_shared_band_cost.pdf",
@@ -100,14 +110,34 @@
       "sha256": "9bccefddb27e1ae88e896fbe39d9d7b10a59f1eac5afb1f448451dc2079907a2"
     },
     {
+      "path": "figures/fig3_shared_band_cost.pdf",
+      "bytes": 24700,
+      "sha256": "dd01257dc953d67bea35c60771a40d99ef3490daddad0d8d449d918044cc5411"
+    },
+    {
+      "path": "figures/fig3_shared_band_cost.png",
+      "bytes": 337565,
+      "sha256": "a42f9d2750723325a884f14105c700479416d4afde97c3aecece6e36b50cda2a"
+    },
+    {
+      "path": "figures/fig4_design_targets.pdf",
+      "bytes": 21240,
+      "sha256": "37986cf647f26db1a711f2fffd1f8eed83684af2dfb2d44a126488890d887b49"
+    },
+    {
+      "path": "figures/fig4_design_targets.png",
+      "bytes": 92934,
+      "sha256": "328ebf7a7edb7073bf4dbb8e788c36e73400730e509c22a052687c2710aec9d8"
+    },
+    {
       "path": "figures/finite_frequency_local_optimality.pdf",
-      "bytes": 27914,
-      "sha256": "89d833af08a10058c7f46a8fb996e18632cffaf63ce019c236a5ddfbd962f9ad"
+      "bytes": 23565,
+      "sha256": "3164cd90fe0d39315e5fbf70bfdccbddb9042a59de1a1d6768dbbd9728a3feae"
     },
     {
       "path": "figures/finite_frequency_local_optimality.png",
-      "bytes": 122189,
-      "sha256": "7517bbbb175a5dbec365b04bb5ea83fba5e2daee2f7380b57a853f83086c5293"
+      "bytes": 104678,
+      "sha256": "7d4d53f9525fed308f168e744953d088281a41ffa2adfca834307a7a12333498"
     },
     {
       "path": "figures/finite_rate_noise_penalty.pdf",
@@ -236,8 +266,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4863,
-      "sha256": "8335c99e4d5c3d3aa91a9ca9ad17aff06a635bb8ecf545b06f3986f76f224ca6"
+      "bytes": 5551,
+      "sha256": "4228548ff0fb408ba2e3877d8db997577d54d27f60f83de4ee59296340806cf8"
     },
     {
       "path": "requirements.txt",
@@ -675,9 +705,14 @@
       "sha256": "3b084f4e29daf587f286ceb141389b8bc66b8746098b75471db166832565184d"
     },
     {
+      "path": "results/reports/experimental_realization_audit_2026_10_05.json",
+      "bytes": 5648,
+      "sha256": "e7761320ac6926ead791cca553ef64a43e40cd1bbc8da2b92f79fb9ed49552b0"
+    },
+    {
       "path": "results/reports/physical_narrative_figure_audit.json",
-      "bytes": 2579,
-      "sha256": "9ea231db8af941d8e7ac88b7348bde24b5af509b930b7fc578eb88280194696c"
+      "bytes": 8128,
+      "sha256": "16fa5abc3b11f8b5f5a68b65599aeee8a7a40b04495516786d4c9c6bf6b9ada3"
     },
     {
       "path": "results/response_noise_collapse.csv",
@@ -920,6 +955,11 @@
       "sha256": "1eb68573203b9c14c076b4431b31f066b01c0ef962beae78e2b09a0fe04e7ac5"
     },
     {
+      "path": "scripts/audit_experimental_realization.py",
+      "bytes": 9343,
+      "sha256": "920a8f230d51ae6803f6e74b2b1c9f834328bdef8158af62e9b3a06112401b35"
+    },
+    {
       "path": "scripts/audit_final_prl_proofs.py",
       "bytes": 14347,
       "sha256": "e8b96585fe20ede337fc8d0a9b913aef25989f24e612a22d7151e94530f67836"
@@ -1021,13 +1061,13 @@
     },
     {
       "path": "scripts/plot_reservoir_optimization.py",
-      "bytes": 15166,
-      "sha256": "e215b517ac77219e646687666483962e11ebd5bcfcb36b5be6735aa7645ed3a6"
+      "bytes": 33014,
+      "sha256": "b6a3d67fc0e2f686a27defadbf6d65b6a4468fad39bd83c64b9bda64094e0558"
     },
     {
       "path": "scripts/reproduce.py",
-      "bytes": 6858,
-      "sha256": "ed54b278694e0084e4778246f5b026a6a8423367c0bb9a7e8d5f63d4b446911b"
+      "bytes": 7329,
+      "sha256": "b6064e6d80bd36eae5ac03c2f6527e64afc3b716b967d8f687aa74e5e42b6b8c"
     },
     {
       "path": "scripts/run_covariance_lower_bound.py",
@@ -1046,8 +1086,8 @@
     },
     {
       "path": "scripts/run_finite_frequency_local_optimality.py",
-      "bytes": 16335,
-      "sha256": "2c3ec77bd566dd81b964be4fbcfae2cf3afa7e6b2fbde29235c7993a642e50b1"
+      "bytes": 17575,
+      "sha256": "38d520e512a551394c280a150b29bffcf17c307f75f3fe9fb2519c5e5524d574"
     },
     {
       "path": "scripts/run_local_bosonic_reservoir.py",
