@@ -18,7 +18,8 @@
       "scripts/check_size_uniform_resources.py",
       "scripts/audit_size_uniform_resources.py",
       "scripts/plot_reservoir_optimization.py",
-      "scripts/audit_high_gain_band_bound.py"
+      "scripts/audit_high_gain_band_bound.py",
+      "scripts/audit_experimental_realization.py"
     ],
     "supplementary_response": [
       "scripts/run_local_bosonic_reservoir.py",
@@ -113,6 +114,8 @@
       "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_r2.npz",
       "results/rate_capped_band_optimization_matrices/N64_B0.05_R8_rall.npz",
       "results/rate_capped_band_optimization_metadata.json",
+      "results/reports/experimental_realization_audit_2026_10_05.json",
+      "results/reports/physical_narrative_figure_audit.json",
       "results/size_uniform_range2_matrices/dimerized_m64_B0.05_R6.8_r2.npz",
       "results/size_uniform_range2_matrices/uniform_m64_B0.05_R6.75_r2.npz",
       "results/size_uniform_resources.csv",
@@ -202,32 +205,15 @@
   "figure_sources": {
     "main": [
       "figures/fig1_local_device.pdf",
-      "figures/fig2_shared_band_cost.pdf",
-      "figures/fig3_design_targets.pdf"
+      "figures/fig2_pointwise_noise.pdf",
+      "figures/fig3_shared_band_cost.pdf",
+      "figures/fig4_design_targets.pdf"
     ],
     "supplement": [
-      "figures/covariance_lower_bound.png",
-      "figures/disordered_transfer_cocycle.pdf",
-      "figures/dynamic_range_noise.pdf",
-      "figures/finite_frequency_local_optimality.pdf",
-      "figures/finite_rate_noise_penalty.pdf",
-      "figures/high_gain_band_bound.pdf",
-      "figures/local_bosonic_reservoir.png",
-      "figures/local_noise_optimization.pdf",
-      "figures/local_observable_response.png",
-      "figures/multiband_transfer_response.pdf",
-      "figures/probe_strength_scan.pdf",
-      "figures/pseudospectrum_contour_N60.png",
-      "figures/rate_noise_tradeoff.pdf",
-      "figures/response_noise_collapse.pdf",
-      "figures/robustness_checks.pdf",
-      "figures/spectral_observables.pdf",
-      "figures/theory_bound_validation.png",
-      "figures/uniform_rate_bound.pdf"
+      "figures/finite_frequency_local_optimality.pdf"
     ]
   },
   "additional_data": [
-    "results/reports/physical_narrative_figure_audit.json",
     "results/sign_transition_scan.csv"
   ]
 }

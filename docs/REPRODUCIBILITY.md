@@ -16,6 +16,7 @@ and generated reports operate on that copy.
 python scripts/reproduce.py manifest
 python scripts/reproduce.py verify
 python scripts/reproduce.py figures
+python scripts/reproduce.py experiment
 ```
 
 Each executed script has its own UTF-8 log in `reproduction/logs/`. The workflow
@@ -38,17 +39,35 @@ performance statements use the prefix witnesses and analytic tail bounds.
 The supplementary integrity check reuses saved interval boxes; it does not
 rerun every interval operation or reconstruct the inherited CRT prefix.
 
-## Regenerate the Main Figures
+## Regenerate the Figures
 
 ```bash
 python scripts/reproduce.py figures
 ```
 
-Outputs are the three PDF/PNG figure pairs under `reproduction/figures/`.
+Outputs are four main PDF/PNG figure pairs and Fig. S1 under
+`reproduction/figures/`. Fig. S1 uses saved CSVs through `--plot-only`.
 The figure script cross-checks spectral averages against certified means and
 requires separated lower/upper bounds for the range-two targets. Numerical
 figure checks are recorded in
 `reproduction/results/reports/physical_narrative_figure_audit.json`.
+
+## Finite-Auxiliary Numerical Comparison
+
+```bash
+python scripts/reproduce.py experiment
+```
+
+`audit_experimental_realization.py` uses the archived `N=64`, `R=8`,
+`Omega=0.05` reservoirs with baseline matrix admixture `epsilon=0.005`,
+intrinsic energy loss `eta=0.01`, auxiliary energy linewidth `kappa_b=50`,
+and internal bath occupation `n_b=0.001`. It checks both complete rate
+matrices, augmented drift stability, equality of the effective responses,
+and full-versus-eliminated response/noise at three frequencies. It integrates
+1601 frequencies and compares the 801-point subset. The output is
+`reproduction/results/reports/experimental_realization_audit_2026_10_05.json`.
+The power-gain minimum is sampled. This workflow reports finite-device
+numerical predictions, without an all-length finite-memory certificate.
 
 ## Rerun the Optimizer
 
@@ -100,7 +119,7 @@ saved prefix. Larger exact reconstructions can be expensive.
 
 | Observation | Action |
 |---|---|
-| Release hash mismatch | Start from an unchanged `v1.0.0` checkout; run new calculations in a working output directory. |
+| Release hash mismatch | Start from an unchanged `v1.1.0` checkout; run new calculations in a working output directory. |
 | Missing Python package | Check the active interpreter and install `requirements.txt` into that environment. |
 | Optimizer cannot produce positive certificate margins | Inspect the solver log and certify the new output; a solver status alone is insufficient. |
 | Missing/stale base certificate | Run the relevant checker before the extension audit. |
