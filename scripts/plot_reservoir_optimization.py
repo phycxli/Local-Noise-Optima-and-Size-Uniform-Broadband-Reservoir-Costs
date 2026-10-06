@@ -259,9 +259,9 @@ def device_figure():
         trace(zigzag, color, .7)
         for dx, half in ((0, .20), (.10, .14), (.20, .07)):
             trace([(7.65+dx, y-half), (7.65+dx, y+half)], color, .65)
-    label(device, 5.94, 3.48, r"$b_g$ / sum pump", gain_color, size=7.4)
+    label(device, 5.94, 3.48, "$b_g$ / sum-frequency\npump", gain_color, size=7.4)
     line(device, [(5.94, 3.12), project(4.6, 2.85, .50)], gain_color, .6)
-    label(device, 4.46, -.47, r"$b_\ell$ / difference pump", loss_color, size=7.4)
+    label(device, 4.46, -.47, "$b_\\ell$ / difference-frequency pump", loss_color, size=7.4)
     line(device, [(4.46, -.16), project(4.6, .25, .27)], loss_color, .6)
 
     # Arrows below denote first-moment drift, not a non-Hermitian microscopic Hamiltonian.
@@ -470,9 +470,9 @@ def shared_figure(rows, certificate, resources):
             "all_length_panel_shows_bounds_not_exact_optima": True}
 
 
-def design_figure(resources, audit):
+def design_figure(resources, audit, frontier):
     fig, axes = plt.subplots(3, 1, figsize=(3.38, 4.60), layout="constrained",
-                             gridspec_kw={"height_ratios": [1.12, 1.0, .90]})
+                             gridspec_kw={"height_ratios": [1.12, 1.03, .87]})
     group, caps, ax = group_for(resources, "uniform"), np.linspace(8, 16, 201), axes[0]
     for bound in sorted(group["locality_bounds"], key=lambda b: b["radius"]):
         radius = str(bound["radius"])
@@ -480,63 +480,107 @@ def design_figure(resources, audit):
                 color=COLORS[radius], lw=1.2, label=rf"$r={radius}$ lower", gid="design_rate_" + radius)
     upper = group["nonlocal_construction_upper"]
     target = upper + .1
+    local = nearest(group)
+    ax.fill_between(caps, target,
+                    np.maximum(target, local["alpha"] - caps * local["beta_with_boundary"]),
+                    color=COLORS["1"], alpha=.09, linewidth=0)
     ax.axhline(upper, color=COLORS["all"], lw=1, label="fixed reference upper", gid="design_reference")
     ax.axhline(target, color=".35", ls="--", lw=.8, gid="design_target")
     threshold = nearest(group)["necessary_R_for_reference_plus_0p1"]
     ax.axvline(threshold, color=".5", ls=":", lw=.8, gid="design_necessary_rate")
-    ax.annotate("13.0093", xy=(threshold, target), xytext=(13.55, 3.60), fontsize=7.3, ha="center",
+    ax.annotate("13.0093", xy=(threshold, target), xytext=(13.65, 3.12), fontsize=7.4, ha="center",
                 arrowprops={"arrowstyle": "->", "lw": .7, "color": ".35"})
-    ax.text(8.15, target + .06, "reference + 0.1", color=".3", fontsize=6.9)
+    ax.text(8.15, target + .065, "reference + 0.1", color=".3", fontsize=7.2)
     ax.set(xlabel=r"complete rate cap $R$", ylabel="noise bound", xlim=(8, 16), ylim=(1.85, 3.9))
-    ax.text(8.15, 3.55, r"$r=1$ lower", color=COLORS["1"], fontsize=7.1)
-    ax.text(15.85, 2.20, r"$r=2$ lower", color=COLORS["2"], fontsize=7.1, ha="right")
-    ax.text(8.15, 2.20, "fixed reference upper", color=COLORS["all"], fontsize=6.9)
+    ax.text(8.15, 3.58, r"$r=1$ lower", color=COLORS["1"], fontsize=7.2)
+    ax.text(11.0, 3.58, r"$r=2$ lower", color=COLORS["2"], fontsize=7.2)
+    ax.text(8.15, 2.05, "fixed reference upper", color=COLORS["all"], fontsize=7.2)
+    ax.text(.98, .93, r"$\Omega=0.05$", transform=ax.transAxes,
+            fontsize=7.2, ha="right", va="top", color="#262626")
 
     ax = axes[1]
-    for name, marker, color in (("uniform", "o", COLORS["1"]), ("dimerized", "s", COLORS["all"])):
-        groups = sorted([g for g in resources["groups"] if g["model"] == name],
-                        key=lambda g: g["halfwidth"])
-        ax.plot([g["halfwidth"] for g in groups],
-                [nearest(g)["all_N_locality_gap_lower_at_R8"] for g in groups],
-                marker + "-", color=color, lw=1.1, ms=3.5, label=name, gid="design_bandwidth_" + name)
-    ax.axvspan(.0495, .0505, color=".5", alpha=.16, linewidth=0)
-    ax.set(xlabel=r"band halfwidth $\Omega$", ylabel="gap lower bound", ylim=(0, 1.75))
+    data_hashes = {}
+    for name, color in (("uniform", COLORS["1"]), ("dimerized", COLORS["all"])):
+        certified = next(g for g in frontier["groups"] if g["model"] == name)
+        edges = [c["halfwidth_interval"][0] for c in certified["cells"]]
+        edges.append(certified["cells"][-1]["halfwidth_interval"][1])
+        gaps = [c["gap_lower"] for c in certified["cells"]]
+        lowers = [c["local_lower"] for c in certified["cells"]]
+        uppers = [c["reference_upper"] for c in certified["cells"]]
+        ax.stairs(lowers, edges, color=color, lw=1.1, label=name + " lower", baseline=None)
+        ax.stairs(uppers, edges, color=color, lw=1.1, ls="--", label=name + " upper", baseline=None)
+        data_hashes[name] = hashlib.sha256(np.column_stack(
+            (edges[:-1], edges[1:], lowers, uppers, gaps)).astype("<f8").tobytes()).hexdigest()
+    ax.set(xlabel=r"band halfwidth $\Omega$", ylabel="band-average\nnoise bound",
+           xlim=(.029, .071), ylim=(1.8, 4.45))
     ax.set_xticks([.03, .05, .07])
-    ax.legend(frameon=False, loc="upper right", fontsize=7, labelspacing=.2)
+    ax.legend(frameon=False, loc="upper left", fontsize=7.2, labelspacing=.2,
+              ncols=2, columnspacing=.6, handlelength=1.3, handletextpad=.35,
+              borderaxespad=.15, borderpad=.2)
+    ax.text(.97, .06, r"$N\geq64,\ R=8$", transform=ax.transAxes, ha="right",
+            fontsize=7.2, color="#262626")
 
     ax = axes[2]
+    intervals = {}
     for y, name, target in ((1, "uniform", 2.6), (0, "dimerized", 2.9)):
         lower = nearest(group_for(resources, name))["all_N_local_noise_lower_at_R8"]
         upper = next(c for c in audit["range_two_constructions"] if c["model"] == name)["all_N_noise_upper"]
         if not upper < target < lower:
             raise ValueError("Minimum-range target is not separated by the certified bounds.")
-        ax.plot([upper, lower], [y, y], color=".72", lw=2, zorder=1, gid="design_range_" + name)
-        ax.scatter([upper], [y], marker="v", color=COLORS["2"], s=28, zorder=3,
-                   label=r"$r=2$ upper" if y else None)
-        ax.scatter([lower], [y], marker="^", color=COLORS["1"], s=28, zorder=3,
-                   label=r"$r=1$ lower" if y else None)
-        ax.plot([target, target], [y - .18, y + .18], ls="--", lw=.8, color=".25",
-                gid="design_range_target_" + name)
-        ax.text(target - .025, y + .20, rf"$T={target}$", fontsize=7.1, ha="right", va="bottom")
-        ax.text((upper + lower) / 2, y - .13, r"$r_{\min}=2$", fontsize=7.5, ha="center", va="top")
-    ax.set(yticks=[0, 1], yticklabels=["dimerized", "uniform"], xlim=(2.4, 3.6), ylim=(-.4, 1.8),
-           xlabel="noise bound / target")
-    ax.set_xticks([2.4, 2.8, 3.2, 3.6])
-    ax.legend(frameon=False, loc="upper right", ncols=2, fontsize=6.8, handletextpad=.3, columnspacing=.8)
+        certified = next(g for g in frontier["groups"] if g["model"] == name)
+        intervals[name] = certified["minimum_range_two_intervals"]
+        color = COLORS["1"] if name == "uniform" else COLORS["all"]
+        for a, b in intervals[name]:
+            ax.broken_barh([(a, b - a)], (y - .14, .28), color=color, alpha=.13, linewidth=0)
+            ax.plot([a, b], [y, y], color=color, lw=1.3, gid="design_range_band_" + name)
+            ax.plot([a, b], [y, y], "|", color=color, ms=7, mew=1.0)
+            ax.text((a + b) / 2, y + .19, r"$r_{\min}=2$", fontsize=7.4,
+                    ha="center", va="bottom", color=color)
+            ax.text(b, y - .23, f"{b:.4f}", fontsize=7.2,
+                    ha="center", va="top", color="#262626")
+    ax.axvline(.05, color=".5", ls=":", lw=.65)
+    ax.set(yticks=[0, 1], yticklabels=["dimerized\n$T=2.9$", "uniform\n$T=2.6$"],
+           xlim=(.029, .071), ylim=(-.6, 1.62), xlabel=r"band halfwidth $\Omega$")
+    ax.set_xticks([.03, .05, .07])
     for ax, letter in zip(axes, ("(a)", "(b)", "(c)")):
-        style(ax)
+        result_style(ax)
         ax.annotate(letter, xy=(.5, 0), xycoords="axes fraction", xytext=(0, -33),
                     textcoords="offset points", ha="center", va="top", fontsize=8.4,
                     annotation_clip=False)
-    design_figure.presentation_audit = result_figure_audit(fig, allow_grid=True)
-    save(fig, "fig4_design_targets")
+    design_figure.presentation_audit = result_figure_audit(fig)
+    save(fig, "fig4_design_targets", dpi=600)
+    return {"continuous_cell_data_sha256": data_hashes,
+            "same_reference_device_across_bandwidths": True,
+            "minimum_range_two_intervals": intervals,
+            "presentation": design_figure.presentation_audit}
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--device-only", action="store_true")
     parser.add_argument("--presentation-only", action="store_true")
+    parser.add_argument("--design-only", action="store_true")
     args = parser.parse_args()
+    if args.design_only:
+        resources = read_json("size_uniform_resources_certificate.json")
+        audit = read_json("size_uniform_resources_audit.json")
+        frontier = read_json("fig4_shared_device_certificate.json")
+        required = {"scripts/strengthen_fig4_resources.py": frontier["source_sha256"],
+                    "results/size_uniform_resources_certificate.json": frontier["base_certificate_sha256"],
+                    "results/size_uniform_resources_audit.json": frontier["base_audit_sha256"],
+                    **frontier["helper_sha256"]}
+        if not frontier["all_checks_passed"] or any(
+                hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest
+                for path, digest in required.items()):
+            raise RuntimeError("The continuous-bandwidth figure requires current exact certificates.")
+        result = design_figure(resources, audit, frontier)
+        result["figure_source_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+        result["certificate_sha256"] = hashlib.sha256(
+            (ROOT / "results/fig4_shared_device_certificate.json").read_bytes()).hexdigest()
+        (ROOT / "results/reports/fig4_strengthening_figure_audit.json").write_text(
+            json.dumps(result, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(result, indent=2), flush=True)
+        return
     with (ROOT / "results/local_noise_optimization_explicit.csv").open(encoding="utf-8") as handle:
         points = [r for r in csv.DictReader(handle) if float(r["power_gain"]) > 1]
     with (ROOT / "results/rate_capped_band_optimization.csv").open(encoding="utf-8") as handle:
@@ -551,7 +595,6 @@ def main():
                          "legend.fontsize": 7, "xtick.labelsize": 7.4, "ytick.labelsize": 7.4,
                          "mathtext.fontset": "stix", "pdf.fonttype": 42})
     device = device_figure()
-    pointwise = pointwise_figure(points)
     if args.device_only:
         output = ROOT / "results/reports/physical_narrative_figure_audit.json"
         result = json.loads(output.read_text(encoding="utf-8"))
@@ -563,9 +606,10 @@ def main():
         output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(device, indent=2), flush=True)
         return
+    pointwise = pointwise_figure(points)
     result = shared_figure(rows, certificate, resources)
     if not args.presentation_only:
-        design_figure(resources, audit)
+        design_figure(resources, audit, read_json("fig4_shared_device_certificate.json"))
     result["figure_source_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     result["device_schematic"] = device
     result["presentation"] = {"pointwise": pointwise, "shared": shared_figure.presentation_audit,
