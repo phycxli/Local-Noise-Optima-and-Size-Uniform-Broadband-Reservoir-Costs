@@ -1,0 +1,49 @@
+{
+  "continuous_cell_data_sha256": {
+    "uniform": "670dffb9f15745bc6d40429ec82529189d8e9858320b6de04eb6d8802045bff6",
+    "dimerized": "f9a84badab15d758a56800689a8d00208116da500fdb34f0631a3798f657961b"
+  },
+  "same_reference_device_across_bandwidths": true,
+  "minimum_range_two_intervals": {
+    "uniform": [
+      [
+        0.03,
+        0.0505
+      ]
+    ],
+    "dimerized": [
+      [
+        0.03,
+        0.0515
+      ]
+    ]
+  },
+  "presentation": {
+    "figure_size_inches": [
+      3.38,
+      4.6
+    ],
+    "text_labels": 23,
+    "label_collisions": [],
+    "all_labels_within_figure": true,
+    "all_backgrounds_pure_white": true,
+    "visible_grid_lines": 0,
+    "bottom_center_panel_labels": [
+      "(a)",
+      "(b)",
+      "(c)"
+    ],
+    "minimum_font_pt": 7.2,
+    "displayed_line_data_sha256": {
+      "design_rate_1": "ba5ab6edbe4f595523028fa9a7a0f7a3250f75c4e60b691e817acd8f784ea858",
+      "design_rate_2": "c3b5d9e16238207d2fc9ee88c42f02318e5a787156beb7fb33ab3b736371dc70",
+      "design_reference": "10d1ed85581068f55083df26c1826e1abc2ef86b70ec24a398a200138926d47f",
+      "design_target": "c3e85e31e09d2dc13b0ffb452d5560bf44943c65ff92a177e5fcea5ab79ca6d8",
+      "design_necessary_rate": "818225a472dfc13d0bca2cd0595c6e6caf6758618fc33b2e7e951aa300b52cb1",
+      "design_range_band_uniform": "b2abdb1f0a677798a18d7a8fba6aa4f78b05a4b5a8447df504b2fa905d32ac93",
+      "design_range_band_dimerized": "730c41d781ee70ad7f8858c5c68ae86e49aa19da3c4d122cd741a074786d3cd1"
+    }
+  },
+  "figure_source_sha256": "64e77af2bc6385da75bed5ab7f0f6866437f2aa02b81fa56ca7927bdaa97caa3",
+  "certificate_sha256": "b24e8c448bfa69d64fdbbe3bc29a96a7ed7aff5eea8fec3a2c422b9bb5fb00c9"
+}

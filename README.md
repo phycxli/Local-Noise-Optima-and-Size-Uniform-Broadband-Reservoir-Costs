@@ -1,8 +1,10 @@
 # Local Noise Optima and Size-Uniform Broadband Reservoir Costs
 
 Research data and Python calculation code for the work by Chengxi Li, Hao Zhu,
-and Wanzi Sun. Release **v1.1.0** accompanies the four-figure manuscript and
-its finite-auxiliary numerical comparison. The earlier `v1.0.0` tag is retained.
+Tie-Fu Zhang, Wanzi Sun, and Wuming Liu. Release **v1.2.0** accompanies the
+four-figure manuscript, continuous bandwidth and minimum-range certificates,
+and finite-auxiliary numerical comparison. The earlier `v1.0.0` and `v1.1.0`
+tags are retained.
 
 A finite boundary region provides a noise-rate lower bound, while an explicit
 reservoir extension provides a size-uniform achievable ceiling. Their separation
@@ -20,7 +22,7 @@ Use Python 3.11 or newer. The reference calculations used Python 3.13.13;
 the dependency versions used for this release are pinned in `requirements.txt`.
 
 ```bash
-git clone --branch v1.1.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
+git clone --branch v1.2.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
 cd Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs
 python -m venv .venv
 ```
@@ -50,7 +52,8 @@ python scripts/reproduce.py experiment
 
 `verify` checks the saved matrices using exact rational arithmetic, rechecks
 S5/S16/S17 on independent finite examples, checks the all-length witnesses and
-extensions, and verifies the supplementary boundary-certificate artifacts.
+extensions, checks the continuous bandwidth coverage and minimum-range
+targets, and verifies the supplementary boundary-certificate artifacts.
 It does not rerun the optimizer. The final line is `PASS: verify`; the report is
 `reproduction/verification_report.json` and individual logs are in
 `reproduction/logs/`. Rational checks can take several minutes.
@@ -95,14 +98,15 @@ python scripts/reproduce.py optimize --output-dir reproduction-optimization
 ```
 
 This longer workflow reruns the 27 finite-chain optimization problems, the 18
-size-uniform prefix problems, and the two range-two prefix constructions, then
-rechecks their certificates and plots the results. Solver outputs can differ
+size-uniform prefix problems, the two range-two prefix constructions, and the
+continuous-band witnesses, then rechecks their certificates and plots the
+results. Solver outputs can differ
 between platforms. Certification, rather than identical optimizer arrays, is
 the acceptance criterion. See [reproduction details](docs/REPRODUCIBILITY.md).
 
 ## Citation and License
 
-Use the `CITATION.cff` metadata and specify release `v1.1.0` when referring to
+Use the `CITATION.cff` metadata and specify release `v1.2.0` when referring to
 these data and code. The repository retains its existing [MIT license](LICENSE).
 The fixed release can be downloaded from the tag's **Code / Download ZIP** menu.
 

@@ -20,6 +20,7 @@ VERIFY = [
     ("check_rate_capped_band_optimization.py", []),
     ("check_size_uniform_resources.py", []),
     ("audit_size_uniform_resources.py", []),
+    ("check_fig4_resources.py", []),
     ("check_boundary_argument_certificate.py", []),
 ]
 WORKFLOWS = {
@@ -33,6 +34,8 @@ WORKFLOWS = {
         ("run_size_uniform_resources.py", []),
         ("check_size_uniform_resources.py", []),
         ("audit_size_uniform_resources.py", ["--solve-local-construction"]),
+        ("strengthen_fig4_resources.py", []),
+        ("check_fig4_resources.py", []),
         ("plot_reservoir_optimization.py", []),
     ],
 }
@@ -100,6 +103,8 @@ def output_summary(output: Path, workflow: str) -> dict:
              "results/size_uniform_resources_certificate.json",
              "results/size_uniform_resources_audit.json",
              "results/final_prl_proof_audit.json",
+             "results/fig4_shared_device_certificate.json",
+             "results/reports/fig4_strengthening_scientific_audit.json",
              "results/boundary_argument_certificate_integrity.json"]
     if workflow in ("figures", "optimize"):
         files += [f"figures/{name}.{extension}" for name in

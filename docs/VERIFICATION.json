@@ -1,9 +1,9 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "reference_environment_runs": {
     "verification": {
       "workflow": "verify",
-      "release": "1.1.0",
+      "release": "1.2.0",
       "environment": {
         "python": "3.13.13",
         "platform": "Windows-11-10.0.28000-SP0",
@@ -22,35 +22,42 @@
           "script": "scripts/audit_final_prl_proofs.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 0.586,
+          "seconds": 0.224,
           "log": "logs/audit_final_prl_proofs.txt"
         },
         {
           "script": "scripts/check_rate_capped_band_optimization.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 7.745,
+          "seconds": 6.088,
           "log": "logs/check_rate_capped_band_optimization.txt"
         },
         {
           "script": "scripts/check_size_uniform_resources.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 10.071,
+          "seconds": 10.173,
           "log": "logs/check_size_uniform_resources.txt"
         },
         {
           "script": "scripts/audit_size_uniform_resources.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 8.56,
+          "seconds": 8.555,
           "log": "logs/audit_size_uniform_resources.txt"
+        },
+        {
+          "script": "scripts/check_fig4_resources.py",
+          "arguments": [],
+          "returncode": 0,
+          "seconds": 2.658,
+          "log": "logs/check_fig4_resources.txt"
         },
         {
           "script": "scripts/check_boundary_argument_certificate.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 0.299,
+          "seconds": 0.332,
           "log": "logs/check_boundary_argument_certificate.txt"
         }
       ],
@@ -61,12 +68,14 @@
         "results/size_uniform_resources_certificate.json": "0480397a9c848f0843f67c28870d8755a6db462da60541a454b371b67fe8d11e",
         "results/size_uniform_resources_audit.json": "e0ecfcbdef29d31c2ee071dbb5edbc85ac75587320fdce987f570a4fc8ae6848",
         "results/final_prl_proof_audit.json": "5f62267cff26a64e213429457427f5549964e26b627fcfed40a7daaa60bd116c",
+        "results/fig4_shared_device_certificate.json": "b24e8c448bfa69d64fdbbe3bc29a96a7ed7aff5eea8fec3a2c422b9bb5fb00c9",
+        "results/reports/fig4_strengthening_scientific_audit.json": "9764076ddd387116c466e2c88068c3eb3d01190c6aadfe2a9670ff7baa90a22e",
         "results/boundary_argument_certificate_integrity.json": "2709ffc42b53c5d912bde212ff0f71c14f060004e1ffae174b01f10eac6cad42"
       }
     },
     "figures": {
       "workflow": "figures",
-      "release": "1.1.0",
+      "release": "1.2.0",
       "environment": {
         "python": "3.13.13",
         "platform": "Windows-11-10.0.28000-SP0",
@@ -85,7 +94,7 @@
           "script": "scripts/plot_reservoir_optimization.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 2.439,
+          "seconds": 2.47,
           "log": "logs/plot_reservoir_optimization.txt"
         },
         {
@@ -94,7 +103,7 @@
             "--plot-only"
           ],
           "returncode": 0,
-          "seconds": 1.823,
+          "seconds": 1.87,
           "log": "logs/run_finite_frequency_local_optimality.txt"
         }
       ],
@@ -105,23 +114,25 @@
         "results/size_uniform_resources_certificate.json": "0480397a9c848f0843f67c28870d8755a6db462da60541a454b371b67fe8d11e",
         "results/size_uniform_resources_audit.json": "e0ecfcbdef29d31c2ee071dbb5edbc85ac75587320fdce987f570a4fc8ae6848",
         "results/final_prl_proof_audit.json": "5f62267cff26a64e213429457427f5549964e26b627fcfed40a7daaa60bd116c",
+        "results/fig4_shared_device_certificate.json": "b24e8c448bfa69d64fdbbe3bc29a96a7ed7aff5eea8fec3a2c422b9bb5fb00c9",
+        "results/reports/fig4_strengthening_scientific_audit.json": "9764076ddd387116c466e2c88068c3eb3d01190c6aadfe2a9670ff7baa90a22e",
         "results/boundary_argument_certificate_integrity.json": "2709ffc42b53c5d912bde212ff0f71c14f060004e1ffae174b01f10eac6cad42",
-        "figures/fig1_local_device.pdf": "216b409b52ed00f7f942e30c6c6f7645e9b1f80e8f1df7884b98c3aaee931283",
-        "figures/fig1_local_device.png": "be020b8381d5655b5786c19d4e7cdd2445c053e58dac53275481f37c3188c0dc",
-        "figures/fig2_pointwise_noise.pdf": "636a20adac6e385a954f0411ab9abe9ad3aebef395a93f6508dd4001cdc5182c",
+        "figures/fig1_local_device.pdf": "09f179eabe787f24b1cccbec4d9a9f950f1198e97bd940178ff8888dc9374b92",
+        "figures/fig1_local_device.png": "45aaba2ee45f691748f6e7c8534e222db513b47f22edff319a09cd8746c18821",
+        "figures/fig2_pointwise_noise.pdf": "331bf4ce2217f6463a5141a55a7e2ab3de89357b29598134002a1e862c3961b9",
         "figures/fig2_pointwise_noise.png": "88c938a3077bc4961b862615ec2ff4ee279c194fe88d31d367d5378d0d13d0d0",
-        "figures/fig3_shared_band_cost.pdf": "c91af8a880c582a3a31925c8c869b51dabaf3445657fa8ff2160bab7ebe68ae7",
+        "figures/fig3_shared_band_cost.pdf": "b0fb71af59bcd8b32d0766f97189f4117195b6c77b5733dd00e9cb386672972e",
         "figures/fig3_shared_band_cost.png": "a42f9d2750723325a884f14105c700479416d4afde97c3aecece6e36b50cda2a",
-        "figures/fig4_design_targets.pdf": "1a847644d10f26b2b1841ff1c39d86c7d8451ef973c6dfda934621c3a10f2e88",
-        "figures/fig4_design_targets.png": "328ebf7a7edb7073bf4dbb8e788c36e73400730e509c22a052687c2710aec9d8",
-        "results/reports/physical_narrative_figure_audit.json": "339dec3717b89de903ba8b2a44c89bd6ae7cb313a38450bcbb566dac9cb20808",
-        "figures/finite_frequency_local_optimality.pdf": "64ba30087fba4ee8e3cc60dcf61dbc433c3100c644df49156ad60bd55020c572",
+        "figures/fig4_design_targets.pdf": "3bc754d4ddc5ff2ebb8d0facef109f3e0445b185e4fb8d3acba5c8d42cbe3143",
+        "figures/fig4_design_targets.png": "14b4e9f619a06f0d1f19150e09485d117379b84ac88d1af7d1704ee90dd4a917",
+        "results/reports/physical_narrative_figure_audit.json": "0cf62ac887be5ffc7cf27f4236e79f3c0f14cf7b8b7dfa72bf784b55a95f64e5",
+        "figures/finite_frequency_local_optimality.pdf": "437116b2713b5443b34b830dfe77d438beb4a73dcc2b00a02b57d3bd84f8d09f",
         "figures/finite_frequency_local_optimality.png": "7d4d53f9525fed308f168e744953d088281a41ffa2adfca834307a7a12333498"
       }
     },
     "experiment": {
       "workflow": "experiment",
-      "release": "1.1.0",
+      "release": "1.2.0",
       "environment": {
         "python": "3.13.13",
         "platform": "Windows-11-10.0.28000-SP0",
@@ -140,18 +151,18 @@
           "script": "scripts/audit_experimental_realization.py",
           "arguments": [],
           "returncode": 0,
-          "seconds": 1.276,
+          "seconds": 1.033,
           "log": "logs/audit_experimental_realization.txt"
         }
       ],
       "passed": true,
       "published_inputs_preserved": true,
       "output_sha256": {
-        "results/reports/experimental_realization_audit_2026_10_05.json": "67e2c0d07aed52c6c1e35c487698b8b58479b20d10362386d8f332ffad9cba90"
+        "results/reports/experimental_realization_audit_2026_10_05.json": "ee6506f202dc7ee486b778e6652ef40f28a8726b3a1d997e4a84254cbc824683"
       }
     }
   },
-  "scope": "Saved matrix certification, four main figures and Fig. S1 from archived data, and finite-auxiliary numerical predictions.",
+  "scope": "Saved matrix certification, continuous bandwidth and minimum-range certificates, four main figures and Fig. S1, and finite-auxiliary numerical predictions.",
   "supplementary_boundary_check": "Saved interval-box coverage and provenance; inherited CRT polynomials not reconstructed.",
   "optimizer_smoke": {
     "inherited_from_release": "1.0.0",

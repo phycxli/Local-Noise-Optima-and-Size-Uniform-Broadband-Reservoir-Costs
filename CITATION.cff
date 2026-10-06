@@ -2,18 +2,24 @@ cff-version: 1.2.0
 message: "Please cite this version of the research data and calculation code."
 type: software
 title: "Local Noise Optima and Size-Uniform Broadband Reservoir Costs"
-version: 1.1.0
-date-released: 2026-10-05
+version: 1.2.0
+date-released: 2026-10-06
 authors:
   - family-names: Li
     given-names: Chengxi
-    affiliation: "Beijing Institute of Petrochemical Technology; Institute of Physics, Chinese Academy of Sciences"
+    affiliation: "Beijing Institute of Petrochemical Technology; Institute of Physics, Chinese Academy of Sciences; Beijing National Laboratory for Condensed Matter Physics"
   - family-names: Zhu
     given-names: Hao
     affiliation: "Beijing Institute of Petrochemical Technology; Institute of Physics, Chinese Academy of Sciences"
+  - family-names: Zhang
+    given-names: Tie-Fu
+    affiliation: "Faculty of Science, Kunming University of Science and Technology; Beijing National Laboratory for Condensed Matter Physics, Institute of Physics, Chinese Academy of Sciences"
   - family-names: Sun
     given-names: Wanzi
     affiliation: "Jining University; Institute of Physics, Chinese Academy of Sciences"
+  - family-names: Liu
+    given-names: Wuming
+    affiliation: "Institute of Physics, Chinese Academy of Sciences; Beijing National Laboratory for Condensed Matter Physics"
 repository-code: "https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs"
-url: "https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.1.0"
+url: "https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.2.0"
 license: MIT

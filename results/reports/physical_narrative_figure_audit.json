@@ -77,7 +77,7 @@
   ],
   "spectra_not_claimed_pointwise_ordered": true,
   "all_length_panel_shows_bounds_not_exact_optima": true,
-  "figure_source_sha256": "b6a3d67fc0e2f686a27defadbf6d65b6a4468fad39bd83c64b9bda64094e0558",
+  "figure_source_sha256": "0bb629e957587584cfd8726130ea0ad249818586623cc86fcc95b47b9548b169",
   "device_schematic": {
     "physical_sign_check": {
       "c": "5/8",
@@ -135,8 +135,8 @@
     ],
     "pointwise_data_sha256": "ccc56a18e95c94f5e60f0e7e94a03036b1b136e4e99bb022e0c85027a4e5a449",
     "files_sha256": {
-      "figures/fig1_local_device.pdf": "4d6639da2adc531f5262e43372beca3cd11b182d323754424b51cc9b27c81a15",
-      "figures/fig1_local_device.png": "be020b8381d5655b5786c19d4e7cdd2445c053e58dac53275481f37c3188c0dc"
+      "figures/fig1_local_device.pdf": "01545429260e086f8752efa53761e7d3227cd168c99a64b162a6d70525e33ce1",
+      "figures/fig1_local_device.png": "45aaba2ee45f691748f6e7c8534e222db513b47f22edff319a09cd8746c18821"
     }
   },
   "presentation": {
