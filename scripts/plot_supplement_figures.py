@@ -323,7 +323,10 @@ def main():
               "S2_resource_hatching": {"complete_loss_rate": "solid", "largest_addressed_coupling": "diagonal"},
               "S2_font_size_at_148_8_mm_width_pt": 9. * (148.8 / 25.4) / 7.5,
               "original_figure_S1_sha256": sha(ROOT / S1_OLD),
-              "original_figure_S2_sha256": sha(CALC / "figures/robustness_and_resources.pdf")}
+              "original_figure_S2_sha256": (
+                  sha(CALC / "figures/robustness_and_resources.pdf")
+                  if (CALC / "figures/robustness_and_resources.pdf").is_file() else None),
+              "historical_figure_required_for_redraw": False}
     assert input_hashes == {name: sha(ROOT / name) for name in INPUTS}
     PROVENANCE.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"all_plotted_values_match_saved_results": True,

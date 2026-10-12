@@ -5,7 +5,9 @@ Tie-Fu Zhang, Lin Zhuang, Wanzi Sun, and Wuming Liu. Release **v1.3.0** adds
 the calibrated finite-auxiliary comparisons, complete coupling budgets,
 continuous parameter-region certificates and noise-tolerance calculations.
 It also contains the balanced single-frequency construction used in the
-current Fig. 2. The earlier tags retain their original contents.
+current Fig. 2. Release **v1.3.1** makes supplementary-figure redraw independent
+of an optional historical figure used only for provenance. The scientific
+result archives are unchanged. The earlier tags retain their original contents.
 
 The additional data and code are in
 [calculations/robustness_20261007](calculations/robustness_20261007/README.md).
@@ -30,7 +32,7 @@ Use Python 3.11 or newer. The reference calculations used Python 3.13.13;
 the dependency versions used for this release are pinned in `requirements.txt`.
 
 ```bash
-git clone --branch v1.3.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
+git clone --branch v1.3.1 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
 cd Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs
 python -m venv .venv
 ```
@@ -114,7 +116,7 @@ the acceptance criterion. See [reproduction details](docs/REPRODUCIBILITY.md).
 
 ## Citation and License
 
-Use the `CITATION.cff` metadata and specify release `v1.2.0` when referring to
+Use the `CITATION.cff` metadata and specify release `v1.3.1` when referring to
 these data and code. The repository retains its existing [MIT license](LICENSE).
 The fixed release can be downloaded from the tag's **Code / Download ZIP** menu.
 

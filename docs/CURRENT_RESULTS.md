@@ -4,6 +4,11 @@ Release v1.3.0 contains the revised figures and the complete scientific
 results for the finite-auxiliary calculations. All results are model
 predictions; no experimental measurements were made.
 
+Release v1.3.1 removes the supplementary renderer's requirement for a
+historical figure that was used only for a provenance hash. It has been
+tested using the public files and extracted result archive alone; no
+scientific data or plotted series changed.
+
 ## Balanced single-frequency reservoirs
 
 The files in `results/balanced_pointwise/` contain the construction used

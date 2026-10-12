@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "release_date": "2026-10-12",
   "title": "The noise cost of reservoir locality in broadband quantum amplifier chains",
   "copied_scientific_files": 448,
@@ -192,17 +192,17 @@
     {
       "path": "CITATION.cff",
       "bytes": 1576,
-      "sha256": "8be41e8517f5b2706bb2101966702dad67ff983243527b7567e8fd689e5a2ec8"
+      "sha256": "041d480b0fbe298056af442dea0716ea89c83b7989aef2d52497d579011dc28b"
     },
     {
       "path": "DATA_AVAILABILITY.md",
       "bytes": 1796,
-      "sha256": "97a1de27d8bd392ded2609000a9eda8812155ff06f10b2427b989c731bb9de5f"
+      "sha256": "89c77351006704e2e595c77d8e5acd4e46d9584e8e2702371aeb470aaa5844a6"
     },
     {
       "path": "docs/CURRENT_RESULTS.md",
-      "bytes": 3256,
-      "sha256": "539c78f8c2986060497fe67bbb621cf2805c50f201dde39999e73af54832989d"
+      "bytes": 3511,
+      "sha256": "9091c2e8a9a0058807e115b0f0e7f66e04c4cf00f4920e57dee005a38728344e"
     },
     {
       "path": "docs/DATA_DICTIONARY.md",
@@ -471,8 +471,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6271,
-      "sha256": "05c47a4af676df52947bfc3658d4483080c0714070e1fecc372039dd585dd880"
+      "bytes": 6441,
+      "sha256": "6cf27a8eb232b820c9efa4114504095fbeba2a6f1768622465d15a787c67b3b5"
     },
     {
       "path": "requirements.txt",
@@ -2111,8 +2111,8 @@
     },
     {
       "path": "scripts/plot_supplement_figures.py",
-      "bytes": 19889,
-      "sha256": "9dd59d03960b2514c643135120d5f5db59155ec7f58281a70fcb5ae3e7bd0845"
+      "bytes": 20060,
+      "sha256": "1d844392fafcec4ef1bbbbde0b8a3c849f1ee451be881765cee966475e7feadc"
     },
     {
       "path": "scripts/reproduce.py",

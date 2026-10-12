@@ -3,9 +3,9 @@
 The numerical data, optimized reservoir matrices, primal and dual factors,
 continuous-band and parameter-region certificates, and Python calculation
 code supporting this study are available in the project repository,
-version 1.3.0:
+version 1.3.1:
 
-https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.3.0
+https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.3.1
 
 The baseline results are in `results/`. The additional finite-auxiliary
 calculations, calibrated-device comparisons, trace-budget tests and
