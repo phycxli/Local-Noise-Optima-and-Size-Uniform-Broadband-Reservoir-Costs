@@ -140,7 +140,7 @@ saved prefix. Larger exact reconstructions can be expensive.
 
 | Observation | Action |
 |---|---|
-| Release hash mismatch | Start from an unchanged `v1.2.0` checkout; run new calculations in a working output directory. |
+| Release hash mismatch | Start from an unchanged `v1.3.0` checkout; run new calculations in a working output directory. |
 | Missing Python package | Check the active interpreter and install `requirements.txt` into that environment. |
 | Optimizer cannot produce positive certificate margins | Inspect the solver log and certify the new output; a solver status alone is insufficient. |
 | Missing/stale base certificate | Run the relevant checker before the extension audit. |

@@ -1,0 +1,71 @@
+{
+  "all_checks_passed": true,
+  "kernel_normalization": "geometric mean, as in the manuscript",
+  "alpha_selection": "Largest generalized eigenvalue of the Schur complement; small positive numerical margin",
+  "scope": "Numerical evaluation of the existing uncapped construction, not a new exact-rate certificate",
+  "reference": {
+    "N": 60,
+    "alpha": 34.860961068993,
+    "alpha_family_infimum_numeric": 34.86096106450691,
+    "noise": 0.994686304755021,
+    "current_noise": 197.65795311062593,
+    "fixed_drift_value": 0.994686304755183,
+    "caves_floor": 0.9848241397850988,
+    "power_gain": 65.8941230242816,
+    "construction_valid": 1,
+    "complete_gain_rate": 134.6237635955312,
+    "complete_loss_rate": 139.52035589139297,
+    "minimum_gain_eigenvalue": 1.6304966881353778e-12,
+    "minimum_loss_eigenvalue": -1.6293451185271963e-15,
+    "normalized_kernel_error": 1.8285088121503879e-16
+  },
+  "center": {
+    "N": 60,
+    "omega": 0.0,
+    "original_noise": 197.65795311062612,
+    "fixed_local_noise": 0.9946863047549608,
+    "pointwise_floor": 0.9946863047551837,
+    "projected_loss_noise": -3.8224675286852896e-14,
+    "power_gain": 65.8941230242818
+  },
+  "positive_endpoint": {
+    "N": 60,
+    "omega": 0.05,
+    "original_noise": 209.6514914433494,
+    "fixed_local_noise": 15.260254544447761,
+    "pointwise_floor": 0.9905511811116421,
+    "projected_loss_noise": 14.26970336333651,
+    "power_gain": 36.82097307990313
+  },
+  "N64": {
+    "N": 64,
+    "alpha": 34.84494091781356,
+    "alpha_family_infimum_numeric": 34.84494091332907,
+    "noise": 0.9969837628386078,
+    "current_noise": 197.67973577684495,
+    "fixed_drift_value": 0.9969837628386804,
+    "caves_floor": 0.9913856569814045,
+    "power_gain": 116.0854632606723,
+    "construction_valid": 1,
+    "complete_gain_rate": 134.57127239539238,
+    "complete_loss_rate": 139.4682760589576,
+    "minimum_gain_eigenvalue": 1.6392324377238205e-12,
+    "minimum_loss_eigenvalue": -3.985244339084415e-15,
+    "normalized_kernel_error": 2.8657085779068147e-16
+  },
+  "samples": 401,
+  "max_recurrence_error": 3.342213888644167e-15,
+  "max_noise_identity_error": 6.510347816401918e-13,
+  "rate_cap": null,
+  "fixed_couplings_across_frequency": true,
+  "pointwise_csv": "results/balanced_pointwise/pointwise.csv",
+  "frequency_csv": "results/balanced_pointwise/frequency.csv",
+  "output_sha256": {
+    "results/balanced_pointwise/pointwise.csv": "030818a1fdcabcc8799ff96e713135af0086c138c2b61abbd40aa7605a8062c0",
+    "results/balanced_pointwise/frequency.csv": "ddd2c543e394228c3cfab763e407c23fcb52dd5975b2aa5ecf445816229e608f",
+    "results/balanced_pointwise/reservoir.npz": "39dd2b767b328a0e28af88a57dcc3a3e4c1caf33cd3987c4041aebed235b0f82"
+  },
+  "source_sha256": {
+    "scripts\\build_balanced_fig2.py": "5e970b6a67d7a8b6f2b3ac79415962757859faab2b8798a47c912da4577bcd47"
+  }
+}

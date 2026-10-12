@@ -1,0 +1,27 @@
+{
+  "seed": 20261007,
+  "prefix": 64,
+  "complete_rate_cap": 8.0,
+  "finite_seed_cap": 7.8,
+  "extended_seed_cap": 6.5,
+  "port_rates": [0.2, 0.2],
+  "relative_parameter_grid": [-0.01, 0.0, 0.01],
+  "linewidth_grid": [20.0, 35.0, 50.0, 65.0, 80.0, 100.0],
+  "intrinsic_grid": [0.0, 0.01, 0.02],
+  "occupation_grid": [0.0, 0.001, 0.02],
+  "band_grid": [0.03, 0.04, 0.05, 0.06, 0.07],
+  "sizes": [64, 96, 128],
+  "quadrature_order": 97,
+  "certificate_box": {
+    "model": "uniform", "N": 64, "family": "finite",
+    "relative_parameter_halfspan": 0.005,
+    "parameter_subdivisions": 32,
+    "linewidth_interval": [80.0, 100.0],
+    "linewidth_subdivisions": 4,
+    "intrinsic_interval": [0.0, 0.02],
+    "intrinsic_subdivisions": 2,
+    "occupation_interval": [0.0, 0.02],
+    "band_halfwidth_interval": [0.03, 0.07],
+    "frequency_step": 0.00025
+  }
+}

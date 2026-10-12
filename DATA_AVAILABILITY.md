@@ -1,23 +1,33 @@
-# Data and Code Availability
+# Data and code availability
 
-The numerical data, optimized reservoir matrices, primal and dual certificate
-factors, and Python calculation code supporting this study are publicly available
-in the project repository, version 1.2.0:
+The numerical data, optimized reservoir matrices, primal and dual factors,
+continuous-band and parameter-region certificates, and Python calculation
+code supporting this study are available in the project repository,
+version 1.3.0:
 
-https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.2.0
+https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs/tree/v1.3.0
 
-The repository includes model and parameter records, verification scripts, and
-instructions for reproducing the four main figures, Fig. S1, the Markov-model
-certificates, the continuous bandwidth and minimum-range certificates, and
-the finite-auxiliary numerical comparison. No experimental
-data were collected.
-File-level SHA256 checksums are provided in `release_manifest.json`.
+The baseline results are in `results/`. The additional finite-auxiliary
+calculations, calibrated-device comparisons, trace-budget tests and
+noise-tolerance code are in `calculations/robustness_20261007/`, with an
+English guide and three result archives. Together those archives contain
+every retained scientific result, including comparisons that failed to
+show a noise advantage for the frozen reference. Their file verifier
+checks the complete archive inventory and SHA256 values without
+recomputing the science.
 
-## 中文
+The balanced single-frequency construction used in the current Fig. 2 is
+in `results/balanced_pointwise/`. Commands for the current result figures
+are in `docs/CURRENT_RESULTS.md`. Dependency versions and commands for
+verification and full recomputation are supplied separately, since new
+solver runs can produce different matrix bytes within numerical tolerance.
 
-支持本研究的数值数据、优化储库矩阵、原始与对偶认证因子及 Python 计算代码，
-已公开于上述项目仓库的 1.2.0 版本。仓库包含模型与参数记录、验证脚本，以及
-重现四张正文图、图 S1、Markov 模型证书、连续带宽与最小作用距离证书及
-有限辅助器数值比较的方法。
-本研究未采集实验数据。各发布文件的 SHA256 校验值见
-`release_manifest.json`。
+These data are theoretical calculations and device-design predictions.
+No experimental measurements were made. The all-length bounds concern
+the two specified nominal Markov chains; the calibrated finite-auxiliary
+noise comparisons concern N=64. A parameter scan, a continuous two-device
+certificate and a nearest-neighbor optimality bound have distinct scopes,
+as documented in the additional guide.
+
+`release_manifest.json` gives file-level SHA256 values. The additional
+calculation's `FILE_MANIFEST_SHA256.json` also records every archive member.

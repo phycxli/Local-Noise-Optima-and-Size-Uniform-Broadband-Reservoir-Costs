@@ -18,6 +18,11 @@
       ]
     ]
   },
+  "target_relative_bounds_sha256": {
+    "uniform": "d13db9e6f8e72854107fdd1789a13527a8e5adb92923e2222267e058287e89fe",
+    "dimerized": "af70a77259dd0c8ec1c88270ddd211a80e338e0bdc0978b04cb19e3f4defe98a"
+  },
+  "range_two_panel_shows_certified_bounds_relative_to_target": true,
   "presentation": {
     "figure_size_inches": [
       3.38,
@@ -40,10 +45,11 @@
       "design_reference": "10d1ed85581068f55083df26c1826e1abc2ef86b70ec24a398a200138926d47f",
       "design_target": "c3e85e31e09d2dc13b0ffb452d5560bf44943c65ff92a177e5fcea5ab79ca6d8",
       "design_necessary_rate": "818225a472dfc13d0bca2cd0595c6e6caf6758618fc33b2e7e951aa300b52cb1",
-      "design_range_band_uniform": "b2abdb1f0a677798a18d7a8fba6aa4f78b05a4b5a8447df504b2fa905d32ac93",
-      "design_range_band_dimerized": "730c41d781ee70ad7f8858c5c68ae86e49aa19da3c4d122cd741a074786d3cd1"
+      "design_range_endpoint_uniform": "3c474ce6c6d7ad91155889b8f9f2d109ee4fe4aeb0829c5d8356a7f3f5850d8e",
+      "design_range_endpoint_dimerized": "552afbb28444986850d05b996fa75119b43cb21e65822016173819dd6e08b141",
+      "design_target_zero": "ee282b9a2a908de59370144927dbde8229713e5d8873d82b72a649cb2e6c621a"
     }
   },
-  "figure_source_sha256": "64e77af2bc6385da75bed5ab7f0f6866437f2aa02b81fa56ca7927bdaa97caa3",
+  "figure_source_sha256": "72a65ec9fc83674072285d5a41df75b8ce39e54103e726cad75ed819974d28f4",
   "certificate_sha256": "b24e8c448bfa69d64fdbbe3bc29a96a7ed7aff5eea8fec3a2c422b9bb5fb00c9"
 }

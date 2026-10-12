@@ -1,10 +1,18 @@
-# Local Noise Optima and Size-Uniform Broadband Reservoir Costs
+# The noise cost of reservoir locality in broadband quantum amplifier chains
 
 Research data and Python calculation code for the work by Chengxi Li, Hao Zhu,
-Tie-Fu Zhang, Wanzi Sun, and Wuming Liu. Release **v1.2.0** accompanies the
-four-figure manuscript, continuous bandwidth and minimum-range certificates,
-and finite-auxiliary numerical comparison. The earlier `v1.0.0` and `v1.1.0`
-tags are retained.
+Tie-Fu Zhang, Lin Zhuang, Wanzi Sun, and Wuming Liu. Release **v1.3.0** adds
+the calibrated finite-auxiliary comparisons, complete coupling budgets,
+continuous parameter-region certificates and noise-tolerance calculations.
+It also contains the balanced single-frequency construction used in the
+current Fig. 2. The earlier tags retain their original contents.
+
+The additional data and code are in
+[calculations/robustness_20261007](calculations/robustness_20261007/README.md).
+The saved results are compressed into three independent archives. Follow the
+English guide to extract them, verify their checksums and run the calculations
+in a working copy. [Current figure reproduction](docs/CURRENT_RESULTS.md)
+identifies the data and commands for the revised figures.
 
 A finite boundary region provides a noise-rate lower bound, while an explicit
 reservoir extension provides a size-uniform achievable ceiling. Their separation
@@ -22,7 +30,7 @@ Use Python 3.11 or newer. The reference calculations used Python 3.13.13;
 the dependency versions used for this release are pinned in `requirements.txt`.
 
 ```bash
-git clone --branch v1.2.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
+git clone --branch v1.3.0 https://github.com/phycxli/Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs.git
 cd Local-Noise-Optima-and-Size-Uniform-Broadband-Reservoir-Costs
 python -m venv .venv
 ```

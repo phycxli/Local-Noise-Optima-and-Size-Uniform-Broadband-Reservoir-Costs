@@ -1,0 +1,171 @@
+{
+  "project_inputs_sha256": {
+    "main/main.tex": "5ccbfbcc6735505f52b633ed3f0a2aa9f8b277e8d77e431f6cf7ad9531857b00",
+    "supplement/supplement.tex": "84535bd3a05704c237e5db26513b9abacbfec3f1a7414ef368f84e136cab31a5",
+    "src/shared_band_resources.py": "b787c1f1b894b9fc984619b861ffa12ba55d5a7255d9dfd6050f6bf2fe068d4f",
+    "results/rate_capped_band_optimization_certificate.json": "67e7a7837ab90a49447281df7637f7333b3b28accafa445d20177bbaf1a8028b",
+    "results/size_uniform_resources_certificate.json": "0480397a9c848f0843f67c28870d8755a6db462da60541a454b371b67fe8d11e",
+    "results/size_uniform_resources_matrices/uniform_m64_B0.05_R8_r1.npz": "b80793f40287541d4281752cbff543cf6386bf27a758aae6bc8a321258a6557e",
+    "results/size_uniform_resources_matrices/dimerized_m64_B0.05_R8_r1.npz": "82e2e0dcd3dd2321a6dd1154e2f44b61e33098ed956214eb297d1005655c46cb"
+  },
+  "new_seeds": [
+    {
+      "model": "uniform",
+      "family": "finite",
+      "radius": 1,
+      "file": "inputs/uniform_finite_r1.npz",
+      "solver_status": "optimal",
+      "noise": 3.475466149281706,
+      "complete_rate": 7.799999789765604,
+      "positive_factor_margins": {
+        "programmed_loss": 2.662014649455227e-07,
+        "gain": 1.0880139391671027e-07,
+        "complete_loss_slack": 1.0501720077537035e-07,
+        "gain_slack": 2.255675201799466
+      },
+      "repair_mixing": 1.377955458973868e-07
+    },
+    {
+      "model": "uniform",
+      "family": "finite",
+      "radius": 2,
+      "file": "inputs/uniform_finite_r2.npz",
+      "solver_status": "optimal",
+      "noise": 2.4710176340371066,
+      "complete_rate": 7.799999689867823,
+      "positive_factor_margins": {
+        "programmed_loss": 2.6687842576376296e-07,
+        "gain": 1.061973180853736e-07,
+        "complete_loss_slack": 1.5496608550551784e-07,
+        "gain_slack": 1.2208679624062058
+      },
+      "repair_mixing": 1.3779476679227007e-07
+    },
+    {
+      "model": "uniform",
+      "family": "extended",
+      "radius": 1,
+      "file": "inputs/uniform_extended_r1.npz",
+      "solver_status": "optimal",
+      "noise": 3.76085284020691,
+      "complete_rate": 6.499999781538081,
+      "positive_factor_margins": {
+        "programmed_loss": 4.0100331319190284e-07,
+        "gain": 1.1442354915814617e-07,
+        "complete_loss_slack": 1.0913095941556709e-07,
+        "gain_slack": 2.241524549550607
+      },
+      "repair_mixing": 2.495468881507068e-07
+    },
+    {
+      "model": "uniform",
+      "family": "extended",
+      "radius": 2,
+      "file": "inputs/uniform_extended_r2.npz",
+      "solver_status": "optimal",
+      "noise": 2.561899241534478,
+      "complete_rate": 6.499999614062384,
+      "positive_factor_margins": {
+        "programmed_loss": 4.0200844013570997e-07,
+        "gain": 1.7450370975576762e-07,
+        "complete_loss_slack": 1.9286880637994265e-07,
+        "gain_slack": 1.2021841168254614
+      },
+      "repair_mixing": 2.4954460715077274e-07
+    },
+    {
+      "model": "uniform",
+      "file": "inputs/uniform_physical_dual.npz",
+      "purpose": "physical local lower witness",
+      "solver_status": "optimal",
+      "noise": 4.030283661927661,
+      "complete_rate": 7.999999789389123,
+      "positive_factor_margins": {
+        "programmed_loss": 2.549386286395679e-07,
+        "gain": 1.1422855539991752e-07,
+        "complete_loss_slack": 1.0520543959226535e-07,
+        "gain_slack": 2.2518745961434723
+      },
+      "repair_mixing": 1.2891526286085227e-07
+    },
+    {
+      "model": "dimerized",
+      "family": "finite",
+      "radius": 1,
+      "file": "inputs/dimerized_finite_r1.npz",
+      "solver_status": "optimal",
+      "noise": 3.192374855723858,
+      "complete_rate": 7.799999788728443,
+      "positive_factor_margins": {
+        "programmed_loss": 2.615796233365703e-07,
+        "gain": 1.9216985420721134e-07,
+        "complete_loss_slack": 1.0553577577945515e-07,
+        "gain_slack": 2.173911750657469
+      },
+      "repair_mixing": 1.354881085463634e-07
+    },
+    {
+      "model": "dimerized",
+      "family": "finite",
+      "radius": 2,
+      "file": "inputs/dimerized_finite_r2.npz",
+      "solver_status": "optimal",
+      "noise": 2.606778147926985,
+      "complete_rate": 7.799999787488081,
+      "positive_factor_margins": {
+        "programmed_loss": 2.6175412254389425e-07,
+        "gain": 1.9052773845934785e-07,
+        "complete_loss_slack": 1.0615595614907386e-07,
+        "gain_slack": 1.1861262864139388
+      },
+      "repair_mixing": 1.3548318715044413e-07
+    },
+    {
+      "model": "dimerized",
+      "family": "extended",
+      "radius": 1,
+      "file": "inputs/dimerized_extended_r1.npz",
+      "solver_status": "optimal",
+      "noise": 3.6137135269906544,
+      "complete_rate": 6.499999787148967,
+      "positive_factor_margins": {
+        "programmed_loss": 3.8793946709979207e-07,
+        "gain": 2.5762348620447364e-07,
+        "complete_loss_slack": 1.0632551588439798e-07,
+        "gain_slack": 2.189786253485621
+      },
+      "repair_mixing": 2.4208042343790344e-07
+    },
+    {
+      "model": "dimerized",
+      "family": "extended",
+      "radius": 2,
+      "file": "inputs/dimerized_extended_r2.npz",
+      "solver_status": "optimal",
+      "noise": 2.9275647469906327,
+      "complete_rate": 6.499999785074021,
+      "positive_factor_margins": {
+        "programmed_loss": 3.8842336340918034e-07,
+        "gain": 2.560231650918328e-07,
+        "complete_loss_slack": 1.0736298528465824e-07,
+        "gain_slack": 1.2197755049638264
+      },
+      "repair_mixing": 2.4207124229837223e-07
+    },
+    {
+      "model": "dimerized",
+      "file": "inputs/dimerized_physical_dual.npz",
+      "purpose": "physical local lower witness",
+      "solver_status": "optimal",
+      "noise": 3.6860584817848396,
+      "complete_rate": 7.9999997869438815,
+      "positive_factor_margins": {
+        "programmed_loss": 2.5086694109223325e-07,
+        "gain": 1.8905101368754306e-07,
+        "complete_loss_slack": 1.0642805952257411e-07,
+        "gain_slack": 2.1734309653407697
+      },
+      "repair_mixing": 1.2688770927435018e-07
+    }
+  ]
+}
